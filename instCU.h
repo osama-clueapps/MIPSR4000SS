@@ -1,3 +1,5 @@
+#ifndef INSTCU_H
+#define INSTCU_H
 using namespace std;
 class instCU
 {
@@ -13,6 +15,7 @@ private:
 	void instdec(unsigned int inst);
 	void control();
 };
+#endif
 instCU::instCU()
 {
 	inst = 0;
@@ -38,7 +41,7 @@ void instCU::instdec(unsigned int inst)
 		cout << "IMM YA32423432423: " << Iimm << endl;
 	}
 	
-	Jimm = (inst << 6) >> 5;
+	Jimm = (inst << 6) >> 6;
 	A1 = (inst << 6) >> 27;
 	RsD = A1;
 
@@ -169,7 +172,6 @@ void instCU::setinst(int x)
 	control();
 	//printCU();
 }
-
 void instCU::printCU() {
 	//int Iimm, Jimm, A1, A2, RsD, RtD, RdE;
 	//int op, funct, jump, branch, MemtoReg, MemWrite, RegWrite, aluctrl, alusrc, RegDst;

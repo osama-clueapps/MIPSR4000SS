@@ -17,26 +17,66 @@
 #include "code.h"
 #include "BTB.h"
 using namespace std;
+int clk = 0, rst;
 
+//buffers
+buffer_1 buf1;
+buffer_2 buf2a,buf2b;
+buffer_3 buf3;
+buffer_4 buf4;
+buffer_5 buf5;
+buffer_6 buf6;
+buffer_7 buf7;
+//instdec and CU
+instCU cu;
+//PC
+unsigned int pcin = 0, pcout = -4;
+unsigned int pcofbranch = -1;
+//IM
+imem im;
 void datapath(assembly f);
 void ALU(int a, int b, int ALU_CT, int &result, int &z);
 void PC(unsigned int pcin, unsigned int &pcout, bool en);
+unsigned int inst1 = 0, inst2 = 0;;
+//RegFile
+RegFile rf;
+unsigned int comp = 0, PCSrcD = 0;
+int PCBranchD = 0, PCJump;
+int c1 = 0, c2 = 0, rd1 = 0, rd2 = 0;
+//ALU
+int SrcAE = 0, SrcBE = 0, aluoutE, z, WriteDataE, WriteRegE;
+//BTB
+BTB b;
+//Dmem
+dmem dm;
+int ResultW = 0;
+unsigned int ReadDataM2 = 0;
+int Pbfailedt = 0, Pbfailednt = 0;
+unsigned int bpc;
+vector <Code> code;
+ofstream target;
+assembly a;
 
-void dp(int &clk, unsigned int &pcin,
-	unsigned int &PCSrcD, unsigned int &pcout,
-	int &PCBranchD, int &PCJump,
-	unsigned int &inst,
-	imem &im, dmem &dm, instCU &cu, RegFile &rf,
-	buffer_1 &buf1, buffer_2 &buf2, buffer_3 &buf3, buffer_4 &buf4, buffer_5 &buf5,
-	buffer_6 &buf6, buffer_7 &buf7, int &rd1, int &rd2, int &ResultW, int&WriteDataE, unsigned int &ReadDataM2, int &SrcAE,
-	int &SrcBE, int &aluoutE, int &z, int & c1, int &c2, unsigned int &comp, int &WriteRegE, vector <Code> &code,
-	assembly a, unsigned int &bpc, BTB &b, unsigned int &pcofbranch, int &Pbfailednt, int &Pbfailedt, ofstream &target)
+instCU cu1, cu2;
+buffer_3 buf3a, buf3b;
+int rd1a, rd2a, rd1b, rd2b;
+HazardUnit h1, h2;
+int c1a, c1b, c2a, c2b;
+void dp()
 {
-	target << "\t\t\t\t\t\\t\t Cycle " << clk << endl;
+	//new wire for IF,IS,Dispatch
+	unsigned int inst1D, inst2D;
+
+	////////////////
+	target << "\t\t\t\t\t\t\t Cycle " << clk << endl;
 	HazardUnit h;
-	cu.setinst(buf2.instD);
+	cu.setinst(buf2a.instD);
 	WriteRegE = (buf3.RegDstE == 0) ? buf3.RtE : buf3.RdE;
-	h.inputData(cu.RsD, buf3.RsE, cu.RtD, buf3.RtE, buf3.MemtoRegE, cu.branch, buf3.RegWriteE, buf3.MemtoRegE, buf4.MemtoRegM, buf4.WriteRegM, PCSrcD, buf5.WriteRegM2, buf6.WriteRegM3, buf4.RegWriteM, buf5.RegWriteM2, buf6.RegWriteM3, buf3.RegDstE, buf3.RdE, buf7.WriteRegW, buf7.RegWriteW,WriteRegE);
+	h.inputData(cu.RsD, buf3.RsE, cu.RtD, buf3.RtE, buf3.MemtoRegE, cu.branch,
+		buf3.RegWriteE, buf3.MemtoRegE, buf4.MemtoRegM, buf4.WriteRegM,
+		PCSrcD, buf5.WriteRegM2, buf6.WriteRegM3, buf4.RegWriteM, 
+		buf5.RegWriteM2, buf6.RegWriteM3, buf3.RegDstE, buf3.RdE,
+		buf7.WriteRegW, buf7.RegWriteW,WriteRegE);
 	h.updateData();
 	instCU cb;
 	if (b.isBranch(pcout)) {
@@ -74,21 +114,10 @@ void dp(int &clk, unsigned int &pcin,
 	target << "PCBRANCHD !!!!!!!!  " << dec << PCBranchD << endl;
 	target << "StallF: " << h.StallF << endl;
 	target << "--------------------------------------------------" << endl << endl;
-	/////////////////////////////
-	Code c;
-	if (clk > 0) {
-		if (inst != 0xffffffff && pcout / 4 < a.inst.size() - 1 && a.inst[pcout / 4] != 0xcccccccc) {
-			c.setDetails(a.instructions[pcout / 4], a.inst[pcout / 4], pcout);
-
-		}
-		else
-			c.setDetails("End", 0, pcout);
-		code.push_back(c);
-	}
-	////////////////////////////
 	//IS
-	im.IF2(buf1.PC_out, inst);
-	if (inst >> 26 == 0x4)
+	im.IF2(buf1.PC_out, inst1);
+	im.IF2(buf1.PC_out+4, inst2);
+	if (inst1 >> 26 == 0x4)
 		bpc = buf1.PC_out;
 	//WB
 	ResultW = (buf7.MemtoRegW == 1) ? buf7.ReadDataW : buf7.ALUOutW;
@@ -102,18 +131,17 @@ void dp(int &clk, unsigned int &pcin,
 	target << "WriteRegW: " << buf7.WriteRegW << endl;
 	target << "ResultW: " << ResultW << endl;
 	target << "====================================================================" << endl << endl;
-
 	if (!h.StallD)
-		buf2.inputData(inst, pcout + 4);
+		buf2a.inputData(inst1, pcout + 4);
 	if ((PCSrcD >> 1) | ((PCSrcD >> 1) & 1))
-		buf2.clr();
+		buf2a.clr();
 	target << "IS stage: " << endl;
-	target << "Instruction: " << hex << inst << endl;
+	target << "Instruction: " << hex << inst1 << endl;
 	target << "StallD: " << h.StallD << endl;
 	target << "PCSrc: " << dec << PCSrcD << endl;
 	target << "--------------------------------------------------" << endl << endl;
 	if (clk > 1)
-		buf2.setInstNum(buf1.inst_num - 1, buf1.pc);
+		buf2a.setInstNum(buf1.inst_num - 1, buf1.pc);
 	//RF
 	rf.readRegFile(cu.A1, cu.A2, rd1, rd2);
 	buf3.inputData(cu.RegWrite, cu.MemtoReg, cu.MemWrite, cu.aluctrl, cu.alusrc, cu.RegDst, rd1, rd2, cu.RsD, cu.RtD, cu.RdE, cu.Iimm);
@@ -209,7 +237,7 @@ void dp(int &clk, unsigned int &pcin,
 	target << "ForwardAD " << h.ForwardAD << endl;
 	target << "ForwardBD " << h.ForwardBD << endl;
 	target << "FlushE: " << h.FlushE << endl;
-	target << "InstructionD: " << hex << buf2.instD << endl;
+	target << "InstructionD: " << hex << buf2a.instD << endl;
 	target << "c1: " << c1 << endl;
 	target << "c2: " << c2 << endl;
 	target << "A1: " << cu.A1 << endl;
@@ -230,7 +258,7 @@ void dp(int &clk, unsigned int &pcin,
 	target << "I-imm: " << cu.Iimm << endl;
 	target << "J-imm: " << cu.Jimm << endl;
 	if (clk > 2)
-		buf3.setInstNum(buf2.inst_num - 1, buf2.pc);
+		buf3.setInstNum(buf2a.inst_num - 1, buf2a.pc);
 	target << "--------------------------------------------------" << endl << endl;
 	//EX
 	ALU(SrcAE, SrcBE, buf3.ALUControlE, aluoutE, z);
@@ -298,7 +326,7 @@ void dp(int &clk, unsigned int &pcin,
 	target << "--------------------------------------------------" << endl << endl;
 	//Buffers update
 	buf1.updateData();
-	buf2.updateData();
+	buf2a.updateData();
 	if (h.FlushE)
 		buf3.flushE();
 	else
@@ -316,7 +344,6 @@ int main() {
 	}
 	else
 		cout << "error file" << endl;
-
 	system("Pause");
 	return 0;
 }
@@ -350,68 +377,21 @@ void PC(unsigned int pcin, unsigned int & pcout, bool en)
 }
 void datapath(assembly f)
 {
-	int clk = 0, rst;
-
-	//buffers
-	buffer_1 buf1;
-	buffer_2 buf2;
-	buffer_3 buf3;
-	buffer_4 buf4;
-	buffer_5 buf5;
-	buffer_6 buf6;
-	buffer_7 buf7;
-
-	//instdec and CU
-	instCU cu;
-
-	//PC
-	unsigned int pcin = 0, pcout = -4;
-	unsigned int pcofbranch = -1;
-	//IM
-	imem im;
+	a = f;
 	unsigned int inst = 0;
 	for (int i = 0; i < f.inst.size(); i++)
 	{
 		im.WriteInst(i * 4, f.inst[i]);
 		cout << f.inst[i] << endl;
 	}
-
-	//RegFile
-	RegFile rf;
-	unsigned int comp = 0, PCSrcD = 0;
-	int PCBranchD = 0, PCJump;
-	int c1 = 0, c2 = 0, rd1 = 0, rd2 = 0;
-	//ALU
-	int SrcAE = 0, SrcBE = 0, aluoutE, z, WriteDataE, WriteRegE;
-	//BTB
-	BTB b;
-	//Dmem
-	dmem dm;
-	int ResultW = 0;
-	unsigned int ReadDataM2 = 0;
-	ofstream target;
 	target.open("target.txt");
-	//hazard unit outputs
-	int StallF = 0, StallD = 0, ForwardAD = 0, ForwardBD = 0, FlushE = 0, ForwardAE = 0, ForwardBE = 0, branchstall = 0, lwstall = 0;
-
-	//initialize all SFML stuff here
-	//--
-	int Pbfailedt = 0, Pbfailednt = 0;
-	unsigned int bpc;
-
 	b.fillVector(f.inst);
-	vector <Code> code;
 	while (clk<19)
 	{
 		if (true) {
 
 			clk++;
-			dp(clk, pcin, PCSrcD, pcout,
-				PCBranchD, PCJump, inst,
-				im, dm, cu, rf,
-				buf1, buf2, buf3, buf4, buf5,
-				buf6, buf7, rd1, rd2, ResultW, WriteDataE, ReadDataM2, SrcAE,
-				SrcBE, aluoutE, z, c1, c2, comp, WriteRegE, code, f, bpc, b, pcofbranch, Pbfailednt, Pbfailedt,target);
+			dp();
 		}
 	}
 	for (int i = 0; i < 16; i++)

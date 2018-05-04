@@ -51,7 +51,7 @@ HazardUnit::~HazardUnit()
 {
 
 }
-void HazardUnit::inputData(unsigned int RsD_in, unsigned int RsE_in, unsigned int RtD_in, unsigned int RtE_in, unsigned int MemtoRegE_in, unsigned int branch_in,
+void HazardUnit::inputData(unsigned int RsD_in, unsigned int RsE_in, unsigned int RtD_in, unsigned int RtE_in,unsigned int MemtoRegE_in, unsigned int branch_in,
 	unsigned int RegWriteE_in, unsigned int MemWriteE_in, unsigned int MemtoRegM_in, unsigned int WriteRegM_in,
 	unsigned int PCSrcD_in, unsigned int WriteRegM2_in, unsigned int WriteRegM3_in, unsigned int RegWriteM_in,
 	unsigned int RegWriteM2_in, unsigned int RegWriteM3_in, int RegDstE_in, int RdE_in, int WriteRegW_in,

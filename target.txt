@@ -7,7 +7,7 @@ StallF: 0
 --------------------------------------------------
 
 WB stage: 
-MemtoRegW: 3435973836
+MemtoRegW: 0
 ALUOutW: 0
 ReadDataW: 0
 RegWriteW: 0
@@ -16,7 +16,7 @@ ResultW: 0
 ====================================================================
 
 IS stage: 
-Instruction: cccccccc
+Instruction: 0
 StallD: 0
 PCSrc: 0
 --------------------------------------------------
@@ -85,12 +85,12 @@ MemWriteM2: 0
 ALUOutM2: 0
 WriteDataM2: 0
 WriteRegM2: 0
-ReadDataM2: cccccccc
+ReadDataM2: 0
 --------------------------------------------------
 
 TC stage: 
 RegWriteM3: 0
-MemtoRegM3: cccccccc
+MemtoRegM3: 0
 ALUOutM3: 0
 WriteRegM3: 0
 ReadDataM3: 0
@@ -105,7 +105,7 @@ StallF: 0
 --------------------------------------------------
 
 WB stage: 
-MemtoRegW: 3435973836
+MemtoRegW: 0
 ALUOutW: 0
 ReadDataW: 0
 RegWriteW: 0
@@ -119,16 +119,16 @@ StallD: 0
 PCSrc: 0
 --------------------------------------------------
 
-PCBRANCH BEFORE -13108
+PCBRANCH BEFORE 0
 RF stage: 
 ForwardAD 0
 ForwardBD 0
 FlushE: 0
-InstructionD: cccccccc
+InstructionD: 0
 c1: 0
 c2: 0
-A1: 6
-A2: c
+A1: 0
+A2: 0
 RD1: 0
 RD2: 0
 RegWriteD: 0
@@ -139,11 +139,11 @@ ALUSrc: 0
 RegDstD: 0
 JumpD: 0
 BranchD: 0
-RsD: 6
-RtD: c
-RdE: 19
-I-imm: ffffcccc
-J-imm: 1999998
+RsD: 0
+RtD: 0
+RdE: 0
+I-imm: 0
+J-imm: 0
 --------------------------------------------------
 
 EX stage: 
@@ -183,7 +183,7 @@ MemWriteM2: 0
 ALUOutM2: 0
 WriteDataM2: 0
 WriteRegM2: 0
-ReadDataM2: cccccccc
+ReadDataM2: 0
 --------------------------------------------------
 
 TC stage: 
@@ -191,21 +191,21 @@ RegWriteM3: 0
 MemtoRegM3: 0
 ALUOutM3: 0
 WriteRegM3: 0
-ReadDataM3: cccccccc
+ReadDataM3: 0
 --------------------------------------------------
 
 					\t	 Cycle 3
 IF stage: 
 PCSrcD: 0
 PC: 8
-PCBRANCHD !!!!!!!!  -52432
+PCBRANCHD !!!!!!!!  0
 StallF: 0
 --------------------------------------------------
 
 WB stage: 
 MemtoRegW: 0
 ALUOutW: 0
-ReadDataW: 3435973836
+ReadDataW: 0
 RegWriteW: 0
 WriteRegW: 0
 ResultW: 0
@@ -241,7 +241,7 @@ RsD: 0
 RtD: 1
 RdE: 0
 I-imm: 1
-J-imm: 20002
+J-imm: 10001
 --------------------------------------------------
 
 EX stage: 
@@ -255,8 +255,8 @@ RegWriteE: 0
 MemtoRegE: 0
 MemWriteE: 0
 WriteDataE: 0
-WriteRegE: c
-buf3.RsE: 6
+WriteRegE: 0
+buf3.RsE: 0
 Buf4.WriteregM: 0
 Buf5.WriteRegM2: 0
 Buf6.WriteRegM3: 0
@@ -281,7 +281,7 @@ MemWriteM2: 0
 ALUOutM2: 0
 WriteDataM2: 0
 WriteRegM2: 0
-ReadDataM2: cccccccc
+ReadDataM2: 0
 --------------------------------------------------
 
 TC stage: 
@@ -289,7 +289,7 @@ RegWriteM3: 0
 MemtoRegM3: 0
 ALUOutM3: 0
 WriteRegM3: 0
-ReadDataM3: cccccccc
+ReadDataM3: 0
 --------------------------------------------------
 
 					\t	 Cycle 4
@@ -303,7 +303,7 @@ StallF: 0
 WB stage: 
 MemtoRegW: 0
 ALUOutW: 0
-ReadDataW: 3435973836
+ReadDataW: 0
 RegWriteW: 0
 WriteRegW: 0
 ResultW: 0
@@ -339,7 +339,7 @@ RsD: 1
 RtD: 1
 RdE: 0
 I-imm: 1
-J-imm: 420002
+J-imm: 210001
 --------------------------------------------------
 
 EX stage: 
@@ -355,7 +355,7 @@ MemWriteE: 0
 WriteDataE: 0
 WriteRegE: 1
 buf3.RsE: 0
-Buf4.WriteregM: c
+Buf4.WriteregM: 0
 Buf5.WriteRegM2: 0
 Buf6.WriteRegM3: 0
 Buf7.WriteRegW: 0
@@ -369,7 +369,7 @@ MemtoRegM: 0
 MemWriteM: 0
 ALUOutM: 0
 WriteDataM: 0
-WriteRegM: c
+WriteRegM: 0
 --------------------------------------------------
 
 DS stage: 
@@ -379,7 +379,7 @@ MemWriteM2: 0
 ALUOutM2: 0
 WriteDataM2: 0
 WriteRegM2: 0
-ReadDataM2: cccccccc
+ReadDataM2: 0
 --------------------------------------------------
 
 TC stage: 
@@ -387,7 +387,7 @@ RegWriteM3: 0
 MemtoRegM3: 0
 ALUOutM3: 0
 WriteRegM3: 0
-ReadDataM3: cccccccc
+ReadDataM3: 0
 --------------------------------------------------
 
 					\t	 Cycle 5
@@ -401,7 +401,7 @@ StallF: 0
 WB stage: 
 MemtoRegW: 0
 ALUOutW: 0
-ReadDataW: 3435973836
+ReadDataW: 0
 RegWriteW: 0
 WriteRegW: 0
 ResultW: 0
@@ -437,7 +437,7 @@ RsD: 1
 RtD: 1
 RdE: 0
 I-imm: 1
-J-imm: 420002
+J-imm: 210001
 --------------------------------------------------
 
 EX stage: 
@@ -454,7 +454,7 @@ WriteDataE: 1
 WriteRegE: 1
 buf3.RsE: 1
 Buf4.WriteregM: 1
-Buf5.WriteRegM2: c
+Buf5.WriteRegM2: 0
 Buf6.WriteRegM3: 0
 Buf7.WriteRegW: 0
 FA: 2
@@ -476,8 +476,8 @@ MemtoRegM2: 0
 MemWriteM2: 0
 ALUOutM2: 0
 WriteDataM2: 0
-WriteRegM2: c
-ReadDataM2: cccccccc
+WriteRegM2: 0
+ReadDataM2: 0
 --------------------------------------------------
 
 TC stage: 
@@ -485,7 +485,7 @@ RegWriteM3: 0
 MemtoRegM3: 0
 ALUOutM3: 0
 WriteRegM3: 0
-ReadDataM3: cccccccc
+ReadDataM3: 0
 --------------------------------------------------
 
 					\t	 Cycle 6
@@ -499,7 +499,7 @@ StallF: 0
 WB stage: 
 MemtoRegW: 0
 ALUOutW: 0
-ReadDataW: 3435973836
+ReadDataW: 0
 RegWriteW: 0
 WriteRegW: 0
 ResultW: 0
@@ -535,7 +535,7 @@ RsD: 1
 RtD: 1
 RdE: 0
 I-imm: 1
-J-imm: 420002
+J-imm: 210001
 --------------------------------------------------
 
 EX stage: 
@@ -553,7 +553,7 @@ WriteRegE: 1
 buf3.RsE: 1
 Buf4.WriteregM: 1
 Buf5.WriteRegM2: 1
-Buf6.WriteRegM3: c
+Buf6.WriteRegM3: 0
 Buf7.WriteRegW: 0
 FA: 2
 FB: 2
@@ -575,15 +575,15 @@ MemWriteM2: 0
 ALUOutM2: 1
 WriteDataM2: 0
 WriteRegM2: 1
-ReadDataM2: cccccccc
+ReadDataM2: 0
 --------------------------------------------------
 
 TC stage: 
 RegWriteM3: 0
 MemtoRegM3: 0
 ALUOutM3: 1
-WriteRegM3: c
-ReadDataM3: cccccccc
+WriteRegM3: 0
+ReadDataM3: 0
 --------------------------------------------------
 
 					\t	 Cycle 7
@@ -597,9 +597,9 @@ StallF: 0
 WB stage: 
 MemtoRegW: 0
 ALUOutW: 0
-ReadDataW: 3435973836
+ReadDataW: 0
 RegWriteW: 0
-WriteRegW: 12
+WriteRegW: 0
 ResultW: 0
 ====================================================================
 
@@ -633,7 +633,7 @@ RsD: 1
 RtD: 1
 RdE: 0
 I-imm: 1
-J-imm: 420002
+J-imm: 210001
 --------------------------------------------------
 
 EX stage: 
@@ -652,7 +652,7 @@ buf3.RsE: 1
 Buf4.WriteregM: 1
 Buf5.WriteRegM2: 1
 Buf6.WriteRegM3: 1
-Buf7.WriteRegW: c
+Buf7.WriteRegW: 0
 FA: 2
 FB: 2
 --------------------------------------------------
@@ -673,7 +673,7 @@ MemWriteM2: 0
 ALUOutM2: 2
 WriteDataM2: 1
 WriteRegM2: 1
-ReadDataM2: cccccccc
+ReadDataM2: 0
 --------------------------------------------------
 
 TC stage: 
@@ -681,7 +681,7 @@ RegWriteM3: 1
 MemtoRegM3: 0
 ALUOutM3: 2
 WriteRegM3: 1
-ReadDataM3: cccccccc
+ReadDataM3: 0
 --------------------------------------------------
 
 					\t	 Cycle 8
@@ -695,7 +695,7 @@ StallF: 0
 WB stage: 
 MemtoRegW: 0
 ALUOutW: 1
-ReadDataW: 3435973836
+ReadDataW: 0
 RegWriteW: 1
 WriteRegW: 1
 ResultW: 1
@@ -731,7 +731,7 @@ RsD: 1
 RtD: 1
 RdE: 0
 I-imm: 1
-J-imm: 420002
+J-imm: 210001
 --------------------------------------------------
 
 EX stage: 
@@ -771,7 +771,7 @@ MemWriteM2: 0
 ALUOutM2: 3
 WriteDataM2: 2
 WriteRegM2: 1
-ReadDataM2: cccccccc
+ReadDataM2: 0
 --------------------------------------------------
 
 TC stage: 
@@ -779,7 +779,7 @@ RegWriteM3: 1
 MemtoRegM3: 0
 ALUOutM3: 3
 WriteRegM3: 1
-ReadDataM3: cccccccc
+ReadDataM3: 0
 --------------------------------------------------
 
 					\t	 Cycle 9
@@ -793,7 +793,7 @@ StallF: 0
 WB stage: 
 MemtoRegW: 0
 ALUOutW: 2
-ReadDataW: 3435973836
+ReadDataW: 0
 RegWriteW: 1
 WriteRegW: 1
 ResultW: 2
@@ -829,7 +829,7 @@ RsD: 1
 RtD: 1
 RdE: 0
 I-imm: 1
-J-imm: 420002
+J-imm: 210001
 --------------------------------------------------
 
 EX stage: 
@@ -869,7 +869,7 @@ MemWriteM2: 0
 ALUOutM2: 4
 WriteDataM2: 3
 WriteRegM2: 1
-ReadDataM2: cccccccc
+ReadDataM2: 0
 --------------------------------------------------
 
 TC stage: 
@@ -877,7 +877,7 @@ RegWriteM3: 1
 MemtoRegM3: 0
 ALUOutM3: 4
 WriteRegM3: 1
-ReadDataM3: cccccccc
+ReadDataM3: 0
 --------------------------------------------------
 
 					\t	 Cycle a
@@ -891,7 +891,7 @@ StallF: 0
 WB stage: 
 MemtoRegW: 0
 ALUOutW: 3
-ReadDataW: 3435973836
+ReadDataW: 0
 RegWriteW: 1
 WriteRegW: 1
 ResultW: 3
@@ -927,7 +927,7 @@ RsD: 1
 RtD: 1
 RdE: 0
 I-imm: 1
-J-imm: 420002
+J-imm: 210001
 --------------------------------------------------
 
 EX stage: 
@@ -967,7 +967,7 @@ MemWriteM2: 0
 ALUOutM2: 5
 WriteDataM2: 4
 WriteRegM2: 1
-ReadDataM2: cccccccc
+ReadDataM2: 0
 --------------------------------------------------
 
 TC stage: 
@@ -975,7 +975,7 @@ RegWriteM3: 1
 MemtoRegM3: 0
 ALUOutM3: 5
 WriteRegM3: 1
-ReadDataM3: cccccccc
+ReadDataM3: 0
 --------------------------------------------------
 
 					\t	 Cycle b
@@ -989,14 +989,14 @@ StallF: 0
 WB stage: 
 MemtoRegW: 0
 ALUOutW: 4
-ReadDataW: 3435973836
+ReadDataW: 0
 RegWriteW: 1
 WriteRegW: 1
 ResultW: 4
 ====================================================================
 
 IS stage: 
-Instruction: cccccccc
+Instruction: 0
 StallD: 0
 PCSrc: 0
 --------------------------------------------------
@@ -1065,7 +1065,7 @@ MemWriteM2: 0
 ALUOutM2: 6
 WriteDataM2: 5
 WriteRegM2: 1
-ReadDataM2: cccccccc
+ReadDataM2: 0
 --------------------------------------------------
 
 TC stage: 
@@ -1073,7 +1073,7 @@ RegWriteM3: 1
 MemtoRegM3: 0
 ALUOutM3: 6
 WriteRegM3: 1
-ReadDataM3: cccccccc
+ReadDataM3: 0
 --------------------------------------------------
 
 					\t	 Cycle c
@@ -1087,28 +1087,28 @@ StallF: 0
 WB stage: 
 MemtoRegW: 0
 ALUOutW: 5
-ReadDataW: 3435973836
+ReadDataW: 0
 RegWriteW: 1
 WriteRegW: 1
 ResultW: 5
 ====================================================================
 
 IS stage: 
-Instruction: cccccccc
+Instruction: 0
 StallD: 0
 PCSrc: 0
 --------------------------------------------------
 
-PCBRANCH BEFORE -13108
+PCBRANCH BEFORE 0
 RF stage: 
 ForwardAD 0
 ForwardBD 0
 FlushE: 0
-InstructionD: cccccccc
+InstructionD: 0
 c1: 0
 c2: 0
-A1: 6
-A2: c
+A1: 0
+A2: 0
 RD1: 0
 RD2: 0
 RegWriteD: 0
@@ -1119,11 +1119,11 @@ ALUSrc: 0
 RegDstD: 0
 JumpD: 0
 BranchD: 0
-RsD: 6
-RtD: c
-RdE: 19
-I-imm: ffffcccc
-J-imm: 1999998
+RsD: 0
+RtD: 0
+RdE: 0
+I-imm: 0
+J-imm: 0
 --------------------------------------------------
 
 EX stage: 
@@ -1163,7 +1163,7 @@ MemWriteM2: 0
 ALUOutM2: 7
 WriteDataM2: 6
 WriteRegM2: 1
-ReadDataM2: cccccccc
+ReadDataM2: 0
 --------------------------------------------------
 
 TC stage: 
@@ -1171,42 +1171,42 @@ RegWriteM3: 1
 MemtoRegM3: 0
 ALUOutM3: 7
 WriteRegM3: 1
-ReadDataM3: cccccccc
+ReadDataM3: 0
 --------------------------------------------------
 
 					\t	 Cycle d
 IF stage: 
 PCSrcD: 0
 PC: 30
-PCBRANCHD !!!!!!!!  -52432
+PCBRANCHD !!!!!!!!  0
 StallF: 0
 --------------------------------------------------
 
 WB stage: 
 MemtoRegW: 0
 ALUOutW: 6
-ReadDataW: 3435973836
+ReadDataW: 0
 RegWriteW: 1
 WriteRegW: 1
 ResultW: 6
 ====================================================================
 
 IS stage: 
-Instruction: cccccccc
+Instruction: 0
 StallD: 0
 PCSrc: 0
 --------------------------------------------------
 
-PCBRANCH BEFORE -13108
+PCBRANCH BEFORE 0
 RF stage: 
 ForwardAD 0
 ForwardBD 0
 FlushE: 0
-InstructionD: cccccccc
+InstructionD: 0
 c1: 0
 c2: 0
-A1: 6
-A2: c
+A1: 0
+A2: 0
 RD1: 0
 RD2: 0
 RegWriteD: 0
@@ -1217,11 +1217,11 @@ ALUSrc: 0
 RegDstD: 0
 JumpD: 0
 BranchD: 0
-RsD: 6
-RtD: c
-RdE: 19
-I-imm: ffffcccc
-J-imm: 1999998
+RsD: 0
+RtD: 0
+RdE: 0
+I-imm: 0
+J-imm: 0
 --------------------------------------------------
 
 EX stage: 
@@ -1235,8 +1235,8 @@ RegWriteE: 0
 MemtoRegE: 0
 MemWriteE: 0
 WriteDataE: 0
-WriteRegE: c
-buf3.RsE: 6
+WriteRegE: 0
+buf3.RsE: 0
 Buf4.WriteregM: 0
 Buf5.WriteRegM2: 1
 Buf6.WriteRegM3: 1
@@ -1261,7 +1261,7 @@ MemWriteM2: 0
 ALUOutM2: 8
 WriteDataM2: 7
 WriteRegM2: 1
-ReadDataM2: cccccccc
+ReadDataM2: 0
 --------------------------------------------------
 
 TC stage: 
@@ -1269,42 +1269,42 @@ RegWriteM3: 1
 MemtoRegM3: 0
 ALUOutM3: 8
 WriteRegM3: 1
-ReadDataM3: cccccccc
+ReadDataM3: 0
 --------------------------------------------------
 
 					\t	 Cycle e
 IF stage: 
 PCSrcD: 0
 PC: 34
-PCBRANCHD !!!!!!!!  -52432
+PCBRANCHD !!!!!!!!  0
 StallF: 0
 --------------------------------------------------
 
 WB stage: 
 MemtoRegW: 0
 ALUOutW: 7
-ReadDataW: 3435973836
+ReadDataW: 0
 RegWriteW: 1
 WriteRegW: 1
 ResultW: 7
 ====================================================================
 
 IS stage: 
-Instruction: cccccccc
+Instruction: 0
 StallD: 0
 PCSrc: 0
 --------------------------------------------------
 
-PCBRANCH BEFORE -13108
+PCBRANCH BEFORE 0
 RF stage: 
 ForwardAD 0
 ForwardBD 0
 FlushE: 0
-InstructionD: cccccccc
+InstructionD: 0
 c1: 0
 c2: 0
-A1: 6
-A2: c
+A1: 0
+A2: 0
 RD1: 0
 RD2: 0
 RegWriteD: 0
@@ -1315,11 +1315,11 @@ ALUSrc: 0
 RegDstD: 0
 JumpD: 0
 BranchD: 0
-RsD: 6
-RtD: c
-RdE: 19
-I-imm: ffffcccc
-J-imm: 1999998
+RsD: 0
+RtD: 0
+RdE: 0
+I-imm: 0
+J-imm: 0
 --------------------------------------------------
 
 EX stage: 
@@ -1333,9 +1333,9 @@ RegWriteE: 0
 MemtoRegE: 0
 MemWriteE: 0
 WriteDataE: 0
-WriteRegE: c
-buf3.RsE: 6
-Buf4.WriteregM: c
+WriteRegE: 0
+buf3.RsE: 0
+Buf4.WriteregM: 0
 Buf5.WriteRegM2: 0
 Buf6.WriteRegM3: 1
 Buf7.WriteRegW: 1
@@ -1349,7 +1349,7 @@ MemtoRegM: 0
 MemWriteM: 0
 ALUOutM: 0
 WriteDataM: 0
-WriteRegM: c
+WriteRegM: 0
 --------------------------------------------------
 
 DS stage: 
@@ -1359,7 +1359,7 @@ MemWriteM2: 0
 ALUOutM2: 0
 WriteDataM2: 0
 WriteRegM2: 0
-ReadDataM2: cccccccc
+ReadDataM2: 0
 --------------------------------------------------
 
 TC stage: 
@@ -1367,42 +1367,42 @@ RegWriteM3: 1
 MemtoRegM3: 0
 ALUOutM3: 0
 WriteRegM3: 1
-ReadDataM3: cccccccc
+ReadDataM3: 0
 --------------------------------------------------
 
 					\t	 Cycle f
 IF stage: 
 PCSrcD: 0
 PC: 38
-PCBRANCHD !!!!!!!!  -52432
+PCBRANCHD !!!!!!!!  0
 StallF: 0
 --------------------------------------------------
 
 WB stage: 
 MemtoRegW: 0
 ALUOutW: 8
-ReadDataW: 3435973836
+ReadDataW: 0
 RegWriteW: 1
 WriteRegW: 1
 ResultW: 8
 ====================================================================
 
 IS stage: 
-Instruction: cccccccc
+Instruction: 0
 StallD: 0
 PCSrc: 0
 --------------------------------------------------
 
-PCBRANCH BEFORE -13108
+PCBRANCH BEFORE 0
 RF stage: 
 ForwardAD 0
 ForwardBD 0
 FlushE: 0
-InstructionD: cccccccc
+InstructionD: 0
 c1: 0
 c2: 0
-A1: 6
-A2: c
+A1: 0
+A2: 0
 RD1: 0
 RD2: 0
 RegWriteD: 0
@@ -1413,11 +1413,11 @@ ALUSrc: 0
 RegDstD: 0
 JumpD: 0
 BranchD: 0
-RsD: 6
-RtD: c
-RdE: 19
-I-imm: ffffcccc
-J-imm: 1999998
+RsD: 0
+RtD: 0
+RdE: 0
+I-imm: 0
+J-imm: 0
 --------------------------------------------------
 
 EX stage: 
@@ -1431,10 +1431,10 @@ RegWriteE: 0
 MemtoRegE: 0
 MemWriteE: 0
 WriteDataE: 0
-WriteRegE: c
-buf3.RsE: 6
-Buf4.WriteregM: c
-Buf5.WriteRegM2: c
+WriteRegE: 0
+buf3.RsE: 0
+Buf4.WriteregM: 0
+Buf5.WriteRegM2: 0
 Buf6.WriteRegM3: 0
 Buf7.WriteRegW: 1
 FA: 0
@@ -1447,7 +1447,7 @@ MemtoRegM: 0
 MemWriteM: 0
 ALUOutM: 0
 WriteDataM: 0
-WriteRegM: c
+WriteRegM: 0
 --------------------------------------------------
 
 DS stage: 
@@ -1456,8 +1456,8 @@ MemtoRegM2: 0
 MemWriteM2: 0
 ALUOutM2: 0
 WriteDataM2: 0
-WriteRegM2: c
-ReadDataM2: cccccccc
+WriteRegM2: 0
+ReadDataM2: 0
 --------------------------------------------------
 
 TC stage: 
@@ -1465,42 +1465,42 @@ RegWriteM3: 0
 MemtoRegM3: 0
 ALUOutM3: 0
 WriteRegM3: 0
-ReadDataM3: cccccccc
+ReadDataM3: 0
 --------------------------------------------------
 
 					\t	 Cycle 10
 IF stage: 
 PCSrcD: 0
 PC: 3c
-PCBRANCHD !!!!!!!!  -52432
+PCBRANCHD !!!!!!!!  0
 StallF: 0
 --------------------------------------------------
 
 WB stage: 
 MemtoRegW: 0
 ALUOutW: 0
-ReadDataW: 3435973836
+ReadDataW: 0
 RegWriteW: 0
 WriteRegW: 0
 ResultW: 0
 ====================================================================
 
 IS stage: 
-Instruction: cccccccc
+Instruction: 0
 StallD: 0
 PCSrc: 0
 --------------------------------------------------
 
-PCBRANCH BEFORE -13108
+PCBRANCH BEFORE 0
 RF stage: 
 ForwardAD 0
 ForwardBD 0
 FlushE: 0
-InstructionD: cccccccc
+InstructionD: 0
 c1: 0
 c2: 0
-A1: 6
-A2: c
+A1: 0
+A2: 0
 RD1: 0
 RD2: 0
 RegWriteD: 0
@@ -1511,11 +1511,11 @@ ALUSrc: 0
 RegDstD: 0
 JumpD: 0
 BranchD: 0
-RsD: 6
-RtD: c
-RdE: 19
-I-imm: ffffcccc
-J-imm: 1999998
+RsD: 0
+RtD: 0
+RdE: 0
+I-imm: 0
+J-imm: 0
 --------------------------------------------------
 
 EX stage: 
@@ -1529,11 +1529,11 @@ RegWriteE: 0
 MemtoRegE: 0
 MemWriteE: 0
 WriteDataE: 0
-WriteRegE: c
-buf3.RsE: 6
-Buf4.WriteregM: c
-Buf5.WriteRegM2: c
-Buf6.WriteRegM3: c
+WriteRegE: 0
+buf3.RsE: 0
+Buf4.WriteregM: 0
+Buf5.WriteRegM2: 0
+Buf6.WriteRegM3: 0
 Buf7.WriteRegW: 0
 FA: 0
 FB: 0
@@ -1545,7 +1545,7 @@ MemtoRegM: 0
 MemWriteM: 0
 ALUOutM: 0
 WriteDataM: 0
-WriteRegM: c
+WriteRegM: 0
 --------------------------------------------------
 
 DS stage: 
@@ -1554,51 +1554,51 @@ MemtoRegM2: 0
 MemWriteM2: 0
 ALUOutM2: 0
 WriteDataM2: 0
-WriteRegM2: c
-ReadDataM2: cccccccc
+WriteRegM2: 0
+ReadDataM2: 0
 --------------------------------------------------
 
 TC stage: 
 RegWriteM3: 0
 MemtoRegM3: 0
 ALUOutM3: 0
-WriteRegM3: c
-ReadDataM3: cccccccc
+WriteRegM3: 0
+ReadDataM3: 0
 --------------------------------------------------
 
 					\t	 Cycle 11
 IF stage: 
 PCSrcD: 0
 PC: 40
-PCBRANCHD !!!!!!!!  -52432
+PCBRANCHD !!!!!!!!  0
 StallF: 0
 --------------------------------------------------
 
 WB stage: 
 MemtoRegW: 0
 ALUOutW: 0
-ReadDataW: 3435973836
+ReadDataW: 0
 RegWriteW: 0
-WriteRegW: 12
+WriteRegW: 0
 ResultW: 0
 ====================================================================
 
 IS stage: 
-Instruction: cccccccc
+Instruction: 0
 StallD: 0
 PCSrc: 0
 --------------------------------------------------
 
-PCBRANCH BEFORE -13108
+PCBRANCH BEFORE 0
 RF stage: 
 ForwardAD 0
 ForwardBD 0
 FlushE: 0
-InstructionD: cccccccc
+InstructionD: 0
 c1: 0
 c2: 0
-A1: 6
-A2: c
+A1: 0
+A2: 0
 RD1: 0
 RD2: 0
 RegWriteD: 0
@@ -1609,11 +1609,11 @@ ALUSrc: 0
 RegDstD: 0
 JumpD: 0
 BranchD: 0
-RsD: 6
-RtD: c
-RdE: 19
-I-imm: ffffcccc
-J-imm: 1999998
+RsD: 0
+RtD: 0
+RdE: 0
+I-imm: 0
+J-imm: 0
 --------------------------------------------------
 
 EX stage: 
@@ -1627,12 +1627,12 @@ RegWriteE: 0
 MemtoRegE: 0
 MemWriteE: 0
 WriteDataE: 0
-WriteRegE: c
-buf3.RsE: 6
-Buf4.WriteregM: c
-Buf5.WriteRegM2: c
-Buf6.WriteRegM3: c
-Buf7.WriteRegW: c
+WriteRegE: 0
+buf3.RsE: 0
+Buf4.WriteregM: 0
+Buf5.WriteRegM2: 0
+Buf6.WriteRegM3: 0
+Buf7.WriteRegW: 0
 FA: 0
 FB: 0
 --------------------------------------------------
@@ -1643,7 +1643,7 @@ MemtoRegM: 0
 MemWriteM: 0
 ALUOutM: 0
 WriteDataM: 0
-WriteRegM: c
+WriteRegM: 0
 --------------------------------------------------
 
 DS stage: 
@@ -1652,51 +1652,51 @@ MemtoRegM2: 0
 MemWriteM2: 0
 ALUOutM2: 0
 WriteDataM2: 0
-WriteRegM2: c
-ReadDataM2: cccccccc
+WriteRegM2: 0
+ReadDataM2: 0
 --------------------------------------------------
 
 TC stage: 
 RegWriteM3: 0
 MemtoRegM3: 0
 ALUOutM3: 0
-WriteRegM3: c
-ReadDataM3: cccccccc
+WriteRegM3: 0
+ReadDataM3: 0
 --------------------------------------------------
 
 					\t	 Cycle 12
 IF stage: 
 PCSrcD: 0
 PC: 44
-PCBRANCHD !!!!!!!!  -52432
+PCBRANCHD !!!!!!!!  0
 StallF: 0
 --------------------------------------------------
 
 WB stage: 
 MemtoRegW: 0
 ALUOutW: 0
-ReadDataW: 3435973836
+ReadDataW: 0
 RegWriteW: 0
-WriteRegW: 12
+WriteRegW: 0
 ResultW: 0
 ====================================================================
 
 IS stage: 
-Instruction: cccccccc
+Instruction: 0
 StallD: 0
 PCSrc: 0
 --------------------------------------------------
 
-PCBRANCH BEFORE -13108
+PCBRANCH BEFORE 0
 RF stage: 
 ForwardAD 0
 ForwardBD 0
 FlushE: 0
-InstructionD: cccccccc
+InstructionD: 0
 c1: 0
 c2: 0
-A1: 6
-A2: c
+A1: 0
+A2: 0
 RD1: 0
 RD2: 0
 RegWriteD: 0
@@ -1707,11 +1707,11 @@ ALUSrc: 0
 RegDstD: 0
 JumpD: 0
 BranchD: 0
-RsD: 6
-RtD: c
-RdE: 19
-I-imm: ffffcccc
-J-imm: 1999998
+RsD: 0
+RtD: 0
+RdE: 0
+I-imm: 0
+J-imm: 0
 --------------------------------------------------
 
 EX stage: 
@@ -1725,12 +1725,12 @@ RegWriteE: 0
 MemtoRegE: 0
 MemWriteE: 0
 WriteDataE: 0
-WriteRegE: c
-buf3.RsE: 6
-Buf4.WriteregM: c
-Buf5.WriteRegM2: c
-Buf6.WriteRegM3: c
-Buf7.WriteRegW: c
+WriteRegE: 0
+buf3.RsE: 0
+Buf4.WriteregM: 0
+Buf5.WriteRegM2: 0
+Buf6.WriteRegM3: 0
+Buf7.WriteRegW: 0
 FA: 0
 FB: 0
 --------------------------------------------------
@@ -1741,7 +1741,7 @@ MemtoRegM: 0
 MemWriteM: 0
 ALUOutM: 0
 WriteDataM: 0
-WriteRegM: c
+WriteRegM: 0
 --------------------------------------------------
 
 DS stage: 
@@ -1750,51 +1750,51 @@ MemtoRegM2: 0
 MemWriteM2: 0
 ALUOutM2: 0
 WriteDataM2: 0
-WriteRegM2: c
-ReadDataM2: cccccccc
+WriteRegM2: 0
+ReadDataM2: 0
 --------------------------------------------------
 
 TC stage: 
 RegWriteM3: 0
 MemtoRegM3: 0
 ALUOutM3: 0
-WriteRegM3: c
-ReadDataM3: cccccccc
+WriteRegM3: 0
+ReadDataM3: 0
 --------------------------------------------------
 
 					\t	 Cycle 13
 IF stage: 
 PCSrcD: 0
 PC: 48
-PCBRANCHD !!!!!!!!  -52432
+PCBRANCHD !!!!!!!!  0
 StallF: 0
 --------------------------------------------------
 
 WB stage: 
 MemtoRegW: 0
 ALUOutW: 0
-ReadDataW: 3435973836
+ReadDataW: 0
 RegWriteW: 0
-WriteRegW: 12
+WriteRegW: 0
 ResultW: 0
 ====================================================================
 
 IS stage: 
-Instruction: cccccccc
+Instruction: 0
 StallD: 0
 PCSrc: 0
 --------------------------------------------------
 
-PCBRANCH BEFORE -13108
+PCBRANCH BEFORE 0
 RF stage: 
 ForwardAD 0
 ForwardBD 0
 FlushE: 0
-InstructionD: cccccccc
+InstructionD: 0
 c1: 0
 c2: 0
-A1: 6
-A2: c
+A1: 0
+A2: 0
 RD1: 0
 RD2: 0
 RegWriteD: 0
@@ -1805,11 +1805,11 @@ ALUSrc: 0
 RegDstD: 0
 JumpD: 0
 BranchD: 0
-RsD: 6
-RtD: c
-RdE: 19
-I-imm: ffffcccc
-J-imm: 1999998
+RsD: 0
+RtD: 0
+RdE: 0
+I-imm: 0
+J-imm: 0
 --------------------------------------------------
 
 EX stage: 
@@ -1823,12 +1823,12 @@ RegWriteE: 0
 MemtoRegE: 0
 MemWriteE: 0
 WriteDataE: 0
-WriteRegE: c
-buf3.RsE: 6
-Buf4.WriteregM: c
-Buf5.WriteRegM2: c
-Buf6.WriteRegM3: c
-Buf7.WriteRegW: c
+WriteRegE: 0
+buf3.RsE: 0
+Buf4.WriteregM: 0
+Buf5.WriteRegM2: 0
+Buf6.WriteRegM3: 0
+Buf7.WriteRegW: 0
 FA: 0
 FB: 0
 --------------------------------------------------
@@ -1839,7 +1839,7 @@ MemtoRegM: 0
 MemWriteM: 0
 ALUOutM: 0
 WriteDataM: 0
-WriteRegM: c
+WriteRegM: 0
 --------------------------------------------------
 
 DS stage: 
@@ -1848,15 +1848,15 @@ MemtoRegM2: 0
 MemWriteM2: 0
 ALUOutM2: 0
 WriteDataM2: 0
-WriteRegM2: c
-ReadDataM2: cccccccc
+WriteRegM2: 0
+ReadDataM2: 0
 --------------------------------------------------
 
 TC stage: 
 RegWriteM3: 0
 MemtoRegM3: 0
 ALUOutM3: 0
-WriteRegM3: c
-ReadDataM3: cccccccc
+WriteRegM3: 0
+ReadDataM3: 0
 --------------------------------------------------
 
