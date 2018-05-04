@@ -6,7 +6,7 @@ public:
 	instCU(int x);
 	int inst;
 	int Iimm, Jimm, A1, A2, RsD, RtD, RdE;
-	int op, funct, jump, jumpr,branch, MemtoReg, MemWrite, RegWrite, aluctrl, alusrc, RegDst;
+	int op, funct, jump, jumpr,branch, MemtoReg, MemWrite, RegWrite, aluctrl, alusrc, RegDst,pushstack;
 	void setinst(int x);
 	void printCU();
 private:
@@ -15,6 +15,7 @@ private:
 };
 instCU::instCU()
 {
+	pushstack = 0;
 	inst = 0;
 	instdec(inst);
 	control();
@@ -38,7 +39,7 @@ void instCU::instdec(unsigned int inst)
 		cout << "IMM YA32423432423: " << Iimm << endl;
 	}
 	
-	Jimm = (inst << 6) >> 5;
+	Jimm = (inst << 6) >> 6;
 	A1 = (inst << 6) >> 27;
 	RsD = A1;
 
@@ -49,6 +50,7 @@ void instCU::instdec(unsigned int inst)
 }
 void instCU::control()
 {
+	pushstack = 0;
 	jumpr = 0;
 	if (op == 0 && funct == 0x20)//add
 	{
@@ -149,6 +151,33 @@ void instCU::control()
 		jump = 0;
 		jumpr = 1;
 		branch = 0;
+	}
+	//jal
+	else if (op == 0x3) {
+		RegWrite = 0;
+		MemtoReg = 0;
+		MemWrite = 0;
+		aluctrl = 6;
+		alusrc = 0;
+		RegDst = 1;
+		jump = 1;
+		jumpr = 0;
+		branch = 0;
+		pushstack = 1;
+		
+	}
+	//return
+	else if (op == 0x5) {
+		RegWrite = 0;
+		MemtoReg = 0;
+		MemWrite = 0;
+		aluctrl = 6;
+		alusrc = 0;
+		RegDst = 1;
+		jump = 1;
+		jumpr = 0;
+		branch = 0;
+		pushstack = 2;
 	}
 	else {
 		RegWrite = 0;
