@@ -23,9 +23,9 @@ public:
 	{
 		for (int i = n; i >= 0; i--)
 		{
-			if(m.count(i))
-			if (m[i].WriteReg == dst&&m[i].RegWrite)
-				return true;
+			if (m.count(i))
+				if (m[i].WriteReg == dst && m[i].RegWrite)
+					return true;
 		}
 		return false;
 	}
@@ -34,13 +34,19 @@ public:
 		for (int i = n; i >= 0; i--)
 		{
 			if (m.count(i))
-			if (m[i].WriteReg == dst&&m[i].RegWrite)
-				return m[i].MemtoReg ? m[i].ReadData : m[i].ALUOut;
+				if (m[i].WriteReg == dst && m[i].RegWrite)
+					return (m[i].MemtoReg) ? m[i].ReadData : m[i].ALUOut;
 		}
 		return 0;
 	}
 
-
+	void print() {
+		for (map<int, inst >::const_iterator it = m.begin();
+			it != m.end(); ++it)
+		{
+			std::cout <<dec<<  it->first << " ALUOUT: " << it->second.ALUOut <<"  Regwrite: "  << it->second.RegWrite << "\n";
+		}
+	}
 
 };
 complete::complete()
@@ -64,7 +70,7 @@ void complete::insert(int instNum, unsigned int ReadDataC, unsigned int RegWrite
 	{
 		m.insert(pair<int, inst>(instNum, i));
 	}
-	
+
 }
 bool complete::getnext()
 {

@@ -1,4 +1,5 @@
 #pragma once
+#pragma once
 #ifndef ASSEMBLY_H
 #define ASSEMBLY_H
 #include <string>
@@ -82,8 +83,8 @@ private:
 
 		else if (name != "JR") {
 			imm = atoi((s.substr(i + 1)).c_str());
-		//	cout << "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%		" << imm << endl;
-			/*	return true;*/
+			//	cout << "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%		" << imm << endl;
+				return true;
 		}
 		else {
 			rs = atoi((s.substr(i + 1)).c_str());
@@ -91,7 +92,7 @@ private:
 			return false;*/
 			rd = 0;
 			rt = 0;
-			/*	return true;*/
+				return true;
 		}
 
 		if (j1 != string::npos) {
@@ -110,7 +111,7 @@ private:
 			int k1 = s.find(")");
 
 			/*if (k == string::npos || k1 == string::npos)
-				return false;*/
+			return false;*/
 
 
 			rt = rd;
@@ -141,33 +142,33 @@ private:
 			cout << "UNKNOWN INSTRUCTION: SYNTAX ERROR" << endl;
 			//return false;
 		}
-		
-		
+
+
 		if (type == 'R') {
 			cout << "opcode:" << hex << opcode << endl << "rs: " << rs << endl << "rt: " << rt << endl << "rd: " << rd << endl << "imm: " << imm << endl;
 			rs = rs << 21;
 			rt = rt << 16;
 			rd = rd << 11;
-			
+
 			opcode = opcode << 26;
 			inst = opcode | rs | rt | rd | funct;
 		}
 		else if (type == 'I') {
-			
+
 			if (opcode != 0x4) {
 				rt = rd;
 			}
-			else{
+			else {
 				rt = rs;
 				rs = rd;
 
 			}
-			
-			cout << "opcode:" << hex << opcode << endl << "rs: " <<  dec <<rs << endl << "rt: " << rt << endl << "rd: " << rd << endl << "imm: " << imm << endl;
-		opcode = opcode << 26;	rs = rs << 21;
+
+			cout << "opcode:" << hex << opcode << endl << "rs: " << dec << rs << endl << "rt: " << rt << endl << "rd: " << rd << endl << "imm: " << imm << endl;
+			opcode = opcode << 26;	rs = rs << 21;
 			rt = rt << 16;
 			cout << "I:    " << hex << rs << "      " << rt << endl;
-			
+
 			inst = opcode | rs | rt | (imm & 0x0000ffff);
 		}
 		else if (type == 'J') {
@@ -380,6 +381,7 @@ private:
 
 			while (!inp.eof()) {
 				getline(inp, s);
+				cout << s << endl;
 				removeSpaces(s);
 				cout << s << endl;
 				instructions.push_back(s);

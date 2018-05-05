@@ -11,7 +11,7 @@ public:
 	};
 	Dispatch();
 	~Dispatch();
-	void inputData(unsigned int inst1, int instNum1,unsigned int inst2,int instNum2)
+	void inputData(unsigned int inst1, int instNum1, unsigned int inst2, int instNum2)
 	{
 		if (inst1 != 0)
 		{
@@ -44,7 +44,7 @@ public:
 		if (num == 1)
 		{
 			inst1_val = insts.front().instruction;
-			inst1 = inst1_val;	
+			inst1 = inst1_val;
 			instNum1 = insts.front().instNum;
 			insts.pop();
 			return;
@@ -60,7 +60,7 @@ public:
 			return;
 		}
 		inst2_val = insts.front().instruction;
-		instCU cu1,cu2;
+		instCU cu1, cu2;
 		cu1.setinst(inst1_val);
 		cu2.setinst(inst2_val);
 		if (!dependent(cu1, cu2))

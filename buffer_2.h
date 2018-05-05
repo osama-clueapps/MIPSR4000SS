@@ -46,5 +46,6 @@ void buffer_2::clr()
 {
 	PCPlus4 = 0;
 	PCPlus4D = 0;
+	inst_num = -1;
 }
 #endif

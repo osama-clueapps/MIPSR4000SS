@@ -1,5 +1,4 @@
-#ifndef INSTCU_H
-#define INSTCU_H
+#pragma once
 using namespace std;
 class instCU
 {
@@ -35,10 +34,9 @@ void instCU::instdec(unsigned int inst)
 
 	funct = inst & 0x3f;
 	Iimm = inst & 0xffff;
-	cout << "IMM YA3: " << Iimm << endl;
+	
 	if ((Iimm & 0x8000) == 0x8000) {
 		Iimm = Iimm | 0xffff0000;
-		cout << "IMM YA32423432423: " << Iimm << endl;
 	}
 
 	Jimm = (inst << 6) >> 6;
@@ -214,4 +212,3 @@ void instCU::printCU() {
 	cout << "Op: " << op << endl;
 	cout << "jump: " << jump << endl*/;
 }
-#endif

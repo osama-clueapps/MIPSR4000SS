@@ -15,6 +15,10 @@ public:
 		inst_num_in = num;
 		pc = p;
 	}
+	void flush() {
+		PC_out = 0;
+		inst_num = -1;
+	}
 private:
 
 };
