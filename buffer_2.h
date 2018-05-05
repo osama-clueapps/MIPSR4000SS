@@ -9,11 +9,11 @@ public:
 	void updateData();
 	void clr();
 	unsigned int inst, instD, PCPlus4, PCPlus4D;
-	int inst_num = 0;
+	int inst_num = -1, inst_num_in = -1;
 	unsigned int pc;
 	void setInstNum(int num, unsigned int p)
 	{
-		inst_num = num;
+		inst_num_in = num;
 		pc = p;
 	}
 private:
@@ -40,6 +40,7 @@ void buffer_2::updateData()
 {
 	instD = inst;
 	PCPlus4D = PCPlus4;
+	inst_num = inst_num_in;
 }
 void buffer_2::clr()
 {

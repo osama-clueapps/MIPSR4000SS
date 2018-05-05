@@ -1,3 +1,5 @@
+#ifndef INSTCU_H
+#define INSTCU_H
 using namespace std;
 class instCU
 {
@@ -212,3 +214,4 @@ void instCU::printCU() {
 	cout << "Op: " << op << endl;
 	cout << "jump: " << jump << endl*/;
 }
+#endif

@@ -19,6 +19,13 @@ public:
 		unsigned int PCSrcD_in, unsigned int WriteRegM2_in, unsigned int WriteRegM3_in, unsigned int RegWriteM_in,
 		unsigned int RegWriteM2_in, unsigned int RegWriteM3_in, int RegDstE_in, int RdE_in, int WriteRegW_in,
 		int RegWriteW_in,unsigned int WriteRegE_in);
+	void updatePCSrc(unsigned int PCSrc)
+	{
+		if (PCSrcD != 0)
+			FlushE = 1;
+		else
+			FlushE = 0;
+	}
 private:
 
 };
@@ -86,10 +93,7 @@ void HazardUnit::updateData()
 		((branch) && (RegWriteE) && ((WriteRegE == RsD) ||(WriteRegE == RtD)))//if the data is still not out of the alu
 		||
 		((branch) && (MemtoRegM) && ((WriteRegM == RsD) ||(WriteRegM == RtD)));//if the data is still not out of the memory
-	if (PCSrcD == 1)
-		FlushE = 1;
-	else
-		FlushE = 0;
+	
 	StallF = lwstall || branchstall;
 	StallD = lwstall || branchstall;
 	if ((RsE != 0 && (RsE == WriteRegM)) && RegWriteM)

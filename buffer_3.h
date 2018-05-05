@@ -15,11 +15,11 @@ public:
 		, unsigned int RD1D, unsigned int RD2D, unsigned int RsD, unsigned int RtD
 		, unsigned int RdD, unsigned int SignImmD);
 	void updateData();
-	int inst_num = 0;
+	int inst_num = -1, inst_num_in = -1;
 	unsigned int pc;
 	void setInstNum(int num, unsigned int p)
 	{
-		inst_num = num;
+		inst_num_in = num;
 		pc = p;
 	}
 	void flushE();
@@ -69,6 +69,7 @@ void buffer_3::updateData()
 	RtE = RtD;
 	RdE = RdD;
 	SignImmE = SignImmD;
+	inst_num = inst_num_in;
 }
 void buffer_3::flushE()
 {
@@ -83,7 +84,19 @@ void buffer_3::flushE()
 	RsE = 0;
 	RtE = 0;
 	RdE = 0;
-	SignImmE = 0;
+	RegWriteD = 0;
+	MemtoRegD = 0;
+	MemWriteD = 0;
+	ALUControlD = 0;
+	ALUSrcD = 0;
+	RegDstD = 0;
+	RD1D = 0;
+	RD2D = 0;
+	RsD = 0;
+	RtD = 0;
+	RdD = 0;
+	SignImmD = 0;
+	inst_num = 0;
 	flushed = true;
 }
 #endif

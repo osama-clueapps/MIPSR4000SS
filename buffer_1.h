@@ -8,11 +8,11 @@ public:
 	unsigned int PC_in, PC_out;
 	void inputData(unsigned int);
 	void updateData();
-	int inst_num = 0;
+	int inst_num = -1, inst_num_in = -1;
 	unsigned int pc;
 	void setInstNum(int num, unsigned int p)
 	{
-		inst_num = num;
+		inst_num_in = num;
 		pc = p;
 	}
 private:
@@ -22,7 +22,7 @@ private:
 buffer_1::buffer_1()
 {
 	PC_in = 0;
-	PC_out = -4;
+	PC_out = 0;
 }
 
 buffer_1::~buffer_1()
@@ -35,5 +35,6 @@ void buffer_1::inputData(unsigned int PC)
 void buffer_1::updateData()
 {
 	PC_out = PC_in;
+	inst_num = inst_num_in;
 }
 #endif

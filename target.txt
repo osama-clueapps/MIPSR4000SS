@@ -1,7 +1,7 @@
 							 Cycle 1
 IF stage: 
 PCSrcD: 0
-PC: 0
+PC: 4294967292
 PCBRANCHD !!!!!!!!  0
 StallF: 0
 --------------------------------------------------
@@ -14,33 +14,6 @@ RegWriteW: 0
 WriteRegW: 0
 ResultW: 0
 ====================================================================
-
-PCBRANCH BEFORE 0
-RF stage: 
-ForwardAD 0
-ForwardBD 0
-FlushE: 0
-InstructionD: 0
-c1: 0
-c2: 0
-A1: 0
-A2: 0
-RD1: 0
-RD2: 0
-RegWriteD: 0
-MemtoRegD: 0
-MemWriteD: 0
-ALUControlD: 0
-ALUSrc: 0
-RegDstD: 0
-JumpD: 0
-BranchD: 0
-RsD: 0
-RtD: 0
-RdE: 0
-I-imm: 0
-J-imm: 0
---------------------------------------------------
 
 EX stage: 
 RegDstE: 0
@@ -93,7 +66,7 @@ ReadDataM3: 0
 							 Cycle 2
 IF stage: 
 PCSrcD: 0
-PC: 4
+PC: 4294967292
 PCBRANCHD !!!!!!!!  0
 StallF: 0
 --------------------------------------------------
@@ -106,33 +79,6 @@ RegWriteW: 0
 WriteRegW: 0
 ResultW: 0
 ====================================================================
-
-PCBRANCH BEFORE 0
-RF stage: 
-ForwardAD 0
-ForwardBD 0
-FlushE: 0
-InstructionD: 0
-c1: 0
-c2: 0
-A1: 0
-A2: 0
-RD1: 0
-RD2: 0
-RegWriteD: 0
-MemtoRegD: 0
-MemWriteD: 0
-ALUControlD: 0
-ALUSrc: 0
-RegDstD: 0
-JumpD: 0
-BranchD: 0
-RsD: 0
-RtD: 0
-RdE: 0
-I-imm: 0
-J-imm: 0
---------------------------------------------------
 
 EX stage: 
 RegDstE: 0
@@ -185,7 +131,7 @@ ReadDataM3: 0
 							 Cycle 3
 IF stage: 
 PCSrcD: 0
-PC: 8
+PC: 4294967292
 PCBRANCHD !!!!!!!!  0
 StallF: 0
 --------------------------------------------------
@@ -198,33 +144,6 @@ RegWriteW: 0
 WriteRegW: 0
 ResultW: 0
 ====================================================================
-
-PCBRANCH BEFORE 1
-RF stage: 
-ForwardAD 0
-ForwardBD 0
-FlushE: 0
-InstructionD: 20010001
-c1: 0
-c2: 0
-A1: 0
-A2: 1
-RD1: 0
-RD2: 0
-RegWriteD: 1
-MemtoRegD: 0
-MemWriteD: 0
-ALUControlD: 2
-ALUSrc: 1
-RegDstD: 0
-JumpD: 0
-BranchD: 0
-RsD: 0
-RtD: 1
-RdE: 0
-I-imm: 1
-J-imm: 10001
---------------------------------------------------
 
 EX stage: 
 RegDstE: 0
@@ -277,8 +196,8 @@ ReadDataM3: 0
 							 Cycle 4
 IF stage: 
 PCSrcD: 0
-PC: c
-PCBRANCHD !!!!!!!!  4
+PC: 4294967292
+PCBRANCHD !!!!!!!!  0
 StallF: 0
 --------------------------------------------------
 
@@ -291,45 +210,18 @@ WriteRegW: 0
 ResultW: 0
 ====================================================================
 
-PCBRANCH BEFORE 1
-RF stage: 
-ForwardAD 0
-ForwardBD 0
-FlushE: 0
-InstructionD: 20210001
-c1: 0
-c2: 0
-A1: 1
-A2: 1
-RD1: 0
-RD2: 0
-RegWriteD: 1
-MemtoRegD: 0
-MemWriteD: 0
-ALUControlD: 2
-ALUSrc: 1
-RegDstD: 0
-JumpD: 0
-BranchD: 0
-RsD: 1
-RtD: 1
-RdE: 0
-I-imm: 1
-J-imm: 210001
---------------------------------------------------
-
 EX stage: 
 RegDstE: 0
-ALUSrcE: 1
-ALUControlE: 2
+ALUSrcE: 0
+ALUControlE: 0
 SrcAE: 0
-SrcBE: 1
-ALUResult: 1
-RegWriteE: 1
+SrcBE: 0
+ALUResult: 0
+RegWriteE: 0
 MemtoRegE: 0
 MemWriteE: 0
 WriteDataE: 0
-WriteRegE: 1
+WriteRegE: 0
 buf3.RsE: 0
 Buf4.WriteregM: 0
 Buf5.WriteRegM2: 0
@@ -369,8 +261,8 @@ ReadDataM3: 0
 							 Cycle 5
 IF stage: 
 PCSrcD: 0
-PC: 10
-PCBRANCHD !!!!!!!!  4
+PC: 4294967292
+PCBRANCHD !!!!!!!!  0
 StallF: 0
 --------------------------------------------------
 
@@ -380,64 +272,37 @@ ALUOutW: 0
 ReadDataW: 0
 RegWriteW: 0
 WriteRegW: 0
-ResultW: 0
+ResultW: 1
 ====================================================================
-
-PCBRANCH BEFORE 1
-RF stage: 
-ForwardAD 2
-ForwardBD 2
-FlushE: 0
-InstructionD: 20210001
-c1: 1
-c2: 1
-A1: 1
-A2: 1
-RD1: 0
-RD2: 0
-RegWriteD: 1
-MemtoRegD: 0
-MemWriteD: 0
-ALUControlD: 2
-ALUSrc: 1
-RegDstD: 0
-JumpD: 0
-BranchD: 0
-RsD: 1
-RtD: 1
-RdE: 0
-I-imm: 1
-J-imm: 210001
---------------------------------------------------
 
 EX stage: 
 RegDstE: 0
-ALUSrcE: 1
-ALUControlE: 2
-SrcAE: 1
-SrcBE: 1
-ALUResult: 2
-RegWriteE: 1
+ALUSrcE: 0
+ALUControlE: 0
+SrcAE: 0
+SrcBE: 0
+ALUResult: 0
+RegWriteE: 0
 MemtoRegE: 0
 MemWriteE: 0
-WriteDataE: 1
-WriteRegE: 1
-buf3.RsE: 1
-Buf4.WriteregM: 1
+WriteDataE: 0
+WriteRegE: 0
+buf3.RsE: 0
+Buf4.WriteregM: 0
 Buf5.WriteRegM2: 0
 Buf6.WriteRegM3: 0
 Buf7.WriteRegW: 0
-FA: 2
-FB: 2
+FA: 0
+FB: 0
 --------------------------------------------------
 
 DF stage: 
-RegWriteM: 1
+RegWriteM: 0
 MemtoRegM: 0
 MemWriteM: 0
-ALUOutM: 1
+ALUOutM: 0
 WriteDataM: 0
-WriteRegM: 1
+WriteRegM: 0
 --------------------------------------------------
 
 DS stage: 
@@ -461,8 +326,8 @@ ReadDataM3: 0
 							 Cycle 6
 IF stage: 
 PCSrcD: 0
-PC: 14
-PCBRANCHD !!!!!!!!  4
+PC: 4294967292
+PCBRANCHD !!!!!!!!  0
 StallF: 0
 --------------------------------------------------
 
@@ -472,771 +337,8 @@ ALUOutW: 0
 ReadDataW: 0
 RegWriteW: 0
 WriteRegW: 0
-ResultW: 0
-====================================================================
-
-PCBRANCH BEFORE 1
-RF stage: 
-ForwardAD 2
-ForwardBD 2
-FlushE: 0
-InstructionD: 20210001
-c1: 2
-c2: 2
-A1: 1
-A2: 1
-RD1: 0
-RD2: 0
-RegWriteD: 1
-MemtoRegD: 0
-MemWriteD: 0
-ALUControlD: 2
-ALUSrc: 1
-RegDstD: 0
-JumpD: 0
-BranchD: 0
-RsD: 1
-RtD: 1
-RdE: 0
-I-imm: 1
-J-imm: 210001
---------------------------------------------------
-
-EX stage: 
-RegDstE: 0
-ALUSrcE: 1
-ALUControlE: 2
-SrcAE: 2
-SrcBE: 1
-ALUResult: 3
-RegWriteE: 1
-MemtoRegE: 0
-MemWriteE: 0
-WriteDataE: 2
-WriteRegE: 1
-buf3.RsE: 1
-Buf4.WriteregM: 1
-Buf5.WriteRegM2: 1
-Buf6.WriteRegM3: 0
-Buf7.WriteRegW: 0
-FA: 2
-FB: 2
---------------------------------------------------
-
-DF stage: 
-RegWriteM: 1
-MemtoRegM: 0
-MemWriteM: 0
-ALUOutM: 2
-WriteDataM: 1
-WriteRegM: 1
---------------------------------------------------
-
-DS stage: 
-RegWriteM2: 1
-MemtoRegM2: 0
-MemWriteM2: 0
-ALUOutM2: 1
-WriteDataM2: 0
-WriteRegM2: 1
-ReadDataM2: 0
---------------------------------------------------
-
-TC stage: 
-RegWriteM3: 0
-MemtoRegM3: 0
-ALUOutM3: 1
-WriteRegM3: 0
-ReadDataM3: 0
---------------------------------------------------
-
-							 Cycle 7
-IF stage: 
-PCSrcD: 0
-PC: 18
-PCBRANCHD !!!!!!!!  4
-StallF: 0
---------------------------------------------------
-
-WB stage: 
-MemtoRegW: 0
-ALUOutW: 0
-ReadDataW: 0
-RegWriteW: 0
-WriteRegW: 0
-ResultW: 0
-====================================================================
-
-PCBRANCH BEFORE 1
-RF stage: 
-ForwardAD 2
-ForwardBD 2
-FlushE: 0
-InstructionD: 20210001
-c1: 3
-c2: 3
-A1: 1
-A2: 1
-RD1: 0
-RD2: 0
-RegWriteD: 1
-MemtoRegD: 0
-MemWriteD: 0
-ALUControlD: 2
-ALUSrc: 1
-RegDstD: 0
-JumpD: 0
-BranchD: 0
-RsD: 1
-RtD: 1
-RdE: 0
-I-imm: 1
-J-imm: 210001
---------------------------------------------------
-
-EX stage: 
-RegDstE: 0
-ALUSrcE: 1
-ALUControlE: 2
-SrcAE: 3
-SrcBE: 1
-ALUResult: 4
-RegWriteE: 1
-MemtoRegE: 0
-MemWriteE: 0
-WriteDataE: 3
-WriteRegE: 1
-buf3.RsE: 1
-Buf4.WriteregM: 1
-Buf5.WriteRegM2: 1
-Buf6.WriteRegM3: 1
-Buf7.WriteRegW: 0
-FA: 2
-FB: 2
---------------------------------------------------
-
-DF stage: 
-RegWriteM: 1
-MemtoRegM: 0
-MemWriteM: 0
-ALUOutM: 3
-WriteDataM: 2
-WriteRegM: 1
---------------------------------------------------
-
-DS stage: 
-RegWriteM2: 1
-MemtoRegM2: 0
-MemWriteM2: 0
-ALUOutM2: 2
-WriteDataM2: 1
-WriteRegM2: 1
-ReadDataM2: 0
---------------------------------------------------
-
-TC stage: 
-RegWriteM3: 1
-MemtoRegM3: 0
-ALUOutM3: 2
-WriteRegM3: 1
-ReadDataM3: 0
---------------------------------------------------
-
-							 Cycle 8
-IF stage: 
-PCSrcD: 0
-PC: 1c
-PCBRANCHD !!!!!!!!  4
-StallF: 0
---------------------------------------------------
-
-WB stage: 
-MemtoRegW: 0
-ALUOutW: 1
-ReadDataW: 0
-RegWriteW: 1
-WriteRegW: 1
-ResultW: 1
-====================================================================
-
-PCBRANCH BEFORE 1
-RF stage: 
-ForwardAD 2
-ForwardBD 2
-FlushE: 0
-InstructionD: 20210001
-c1: 4
-c2: 4
-A1: 1
-A2: 1
-RD1: 1
-RD2: 1
-RegWriteD: 1
-MemtoRegD: 0
-MemWriteD: 0
-ALUControlD: 2
-ALUSrc: 1
-RegDstD: 0
-JumpD: 0
-BranchD: 0
-RsD: 1
-RtD: 1
-RdE: 0
-I-imm: 1
-J-imm: 210001
---------------------------------------------------
-
-EX stage: 
-RegDstE: 0
-ALUSrcE: 1
-ALUControlE: 2
-SrcAE: 4
-SrcBE: 1
-ALUResult: 5
-RegWriteE: 1
-MemtoRegE: 0
-MemWriteE: 0
-WriteDataE: 4
-WriteRegE: 1
-buf3.RsE: 1
-Buf4.WriteregM: 1
-Buf5.WriteRegM2: 1
-Buf6.WriteRegM3: 1
-Buf7.WriteRegW: 1
-FA: 2
-FB: 2
---------------------------------------------------
-
-DF stage: 
-RegWriteM: 1
-MemtoRegM: 0
-MemWriteM: 0
-ALUOutM: 4
-WriteDataM: 3
-WriteRegM: 1
---------------------------------------------------
-
-DS stage: 
-RegWriteM2: 1
-MemtoRegM2: 0
-MemWriteM2: 0
-ALUOutM2: 3
-WriteDataM2: 2
-WriteRegM2: 1
-ReadDataM2: 0
---------------------------------------------------
-
-TC stage: 
-RegWriteM3: 1
-MemtoRegM3: 0
-ALUOutM3: 3
-WriteRegM3: 1
-ReadDataM3: 0
---------------------------------------------------
-
-							 Cycle 9
-IF stage: 
-PCSrcD: 0
-PC: 20
-PCBRANCHD !!!!!!!!  4
-StallF: 0
---------------------------------------------------
-
-WB stage: 
-MemtoRegW: 0
-ALUOutW: 2
-ReadDataW: 0
-RegWriteW: 1
-WriteRegW: 1
 ResultW: 2
 ====================================================================
-
-PCBRANCH BEFORE 1
-RF stage: 
-ForwardAD 2
-ForwardBD 2
-FlushE: 0
-InstructionD: 20210001
-c1: 5
-c2: 5
-A1: 1
-A2: 1
-RD1: 2
-RD2: 2
-RegWriteD: 1
-MemtoRegD: 0
-MemWriteD: 0
-ALUControlD: 2
-ALUSrc: 1
-RegDstD: 0
-JumpD: 0
-BranchD: 0
-RsD: 1
-RtD: 1
-RdE: 0
-I-imm: 1
-J-imm: 210001
---------------------------------------------------
-
-EX stage: 
-RegDstE: 0
-ALUSrcE: 1
-ALUControlE: 2
-SrcAE: 5
-SrcBE: 1
-ALUResult: 6
-RegWriteE: 1
-MemtoRegE: 0
-MemWriteE: 0
-WriteDataE: 5
-WriteRegE: 1
-buf3.RsE: 1
-Buf4.WriteregM: 1
-Buf5.WriteRegM2: 1
-Buf6.WriteRegM3: 1
-Buf7.WriteRegW: 1
-FA: 2
-FB: 2
---------------------------------------------------
-
-DF stage: 
-RegWriteM: 1
-MemtoRegM: 0
-MemWriteM: 0
-ALUOutM: 5
-WriteDataM: 4
-WriteRegM: 1
---------------------------------------------------
-
-DS stage: 
-RegWriteM2: 1
-MemtoRegM2: 0
-MemWriteM2: 0
-ALUOutM2: 4
-WriteDataM2: 3
-WriteRegM2: 1
-ReadDataM2: 0
---------------------------------------------------
-
-TC stage: 
-RegWriteM3: 1
-MemtoRegM3: 0
-ALUOutM3: 4
-WriteRegM3: 1
-ReadDataM3: 0
---------------------------------------------------
-
-							 Cycle a
-IF stage: 
-PCSrcD: 0
-PC: 24
-PCBRANCHD !!!!!!!!  4
-StallF: 0
---------------------------------------------------
-
-WB stage: 
-MemtoRegW: 0
-ALUOutW: 3
-ReadDataW: 0
-RegWriteW: 1
-WriteRegW: 1
-ResultW: 3
-====================================================================
-
-PCBRANCH BEFORE 1
-RF stage: 
-ForwardAD 2
-ForwardBD 2
-FlushE: 0
-InstructionD: 20210001
-c1: 6
-c2: 6
-A1: 1
-A2: 1
-RD1: 3
-RD2: 3
-RegWriteD: 1
-MemtoRegD: 0
-MemWriteD: 0
-ALUControlD: 2
-ALUSrc: 1
-RegDstD: 0
-JumpD: 0
-BranchD: 0
-RsD: 1
-RtD: 1
-RdE: 0
-I-imm: 1
-J-imm: 210001
---------------------------------------------------
-
-EX stage: 
-RegDstE: 0
-ALUSrcE: 1
-ALUControlE: 2
-SrcAE: 6
-SrcBE: 1
-ALUResult: 7
-RegWriteE: 1
-MemtoRegE: 0
-MemWriteE: 0
-WriteDataE: 6
-WriteRegE: 1
-buf3.RsE: 1
-Buf4.WriteregM: 1
-Buf5.WriteRegM2: 1
-Buf6.WriteRegM3: 1
-Buf7.WriteRegW: 1
-FA: 2
-FB: 2
---------------------------------------------------
-
-DF stage: 
-RegWriteM: 1
-MemtoRegM: 0
-MemWriteM: 0
-ALUOutM: 6
-WriteDataM: 5
-WriteRegM: 1
---------------------------------------------------
-
-DS stage: 
-RegWriteM2: 1
-MemtoRegM2: 0
-MemWriteM2: 0
-ALUOutM2: 5
-WriteDataM2: 4
-WriteRegM2: 1
-ReadDataM2: 0
---------------------------------------------------
-
-TC stage: 
-RegWriteM3: 1
-MemtoRegM3: 0
-ALUOutM3: 5
-WriteRegM3: 1
-ReadDataM3: 0
---------------------------------------------------
-
-							 Cycle b
-IF stage: 
-PCSrcD: 0
-PC: 28
-PCBRANCHD !!!!!!!!  4
-StallF: 0
---------------------------------------------------
-
-WB stage: 
-MemtoRegW: 0
-ALUOutW: 4
-ReadDataW: 0
-RegWriteW: 1
-WriteRegW: 1
-ResultW: 4
-====================================================================
-
-PCBRANCH BEFORE 0
-RF stage: 
-ForwardAD 0
-ForwardBD 0
-FlushE: 0
-InstructionD: 0
-c1: 0
-c2: 0
-A1: 0
-A2: 0
-RD1: 0
-RD2: 0
-RegWriteD: 0
-MemtoRegD: 0
-MemWriteD: 0
-ALUControlD: 0
-ALUSrc: 0
-RegDstD: 0
-JumpD: 0
-BranchD: 0
-RsD: 0
-RtD: 0
-RdE: 0
-I-imm: 0
-J-imm: 0
---------------------------------------------------
-
-EX stage: 
-RegDstE: 0
-ALUSrcE: 1
-ALUControlE: 2
-SrcAE: 7
-SrcBE: 1
-ALUResult: 8
-RegWriteE: 1
-MemtoRegE: 0
-MemWriteE: 0
-WriteDataE: 7
-WriteRegE: 1
-buf3.RsE: 1
-Buf4.WriteregM: 1
-Buf5.WriteRegM2: 1
-Buf6.WriteRegM3: 1
-Buf7.WriteRegW: 1
-FA: 2
-FB: 2
---------------------------------------------------
-
-DF stage: 
-RegWriteM: 1
-MemtoRegM: 0
-MemWriteM: 0
-ALUOutM: 7
-WriteDataM: 6
-WriteRegM: 1
---------------------------------------------------
-
-DS stage: 
-RegWriteM2: 1
-MemtoRegM2: 0
-MemWriteM2: 0
-ALUOutM2: 6
-WriteDataM2: 5
-WriteRegM2: 1
-ReadDataM2: 0
---------------------------------------------------
-
-TC stage: 
-RegWriteM3: 1
-MemtoRegM3: 0
-ALUOutM3: 6
-WriteRegM3: 1
-ReadDataM3: 0
---------------------------------------------------
-
-							 Cycle c
-IF stage: 
-PCSrcD: 0
-PC: 2c
-PCBRANCHD !!!!!!!!  0
-StallF: 0
---------------------------------------------------
-
-WB stage: 
-MemtoRegW: 0
-ALUOutW: 5
-ReadDataW: 0
-RegWriteW: 1
-WriteRegW: 1
-ResultW: 5
-====================================================================
-
-PCBRANCH BEFORE 0
-RF stage: 
-ForwardAD 0
-ForwardBD 0
-FlushE: 0
-InstructionD: 0
-c1: 0
-c2: 0
-A1: 0
-A2: 0
-RD1: 0
-RD2: 0
-RegWriteD: 0
-MemtoRegD: 0
-MemWriteD: 0
-ALUControlD: 0
-ALUSrc: 0
-RegDstD: 0
-JumpD: 0
-BranchD: 0
-RsD: 0
-RtD: 0
-RdE: 0
-I-imm: 0
-J-imm: 0
---------------------------------------------------
-
-EX stage: 
-RegDstE: 0
-ALUSrcE: 0
-ALUControlE: 0
-SrcAE: 0
-SrcBE: 0
-ALUResult: 0
-RegWriteE: 0
-MemtoRegE: 0
-MemWriteE: 0
-WriteDataE: 0
-WriteRegE: 0
-buf3.RsE: 0
-Buf4.WriteregM: 1
-Buf5.WriteRegM2: 1
-Buf6.WriteRegM3: 1
-Buf7.WriteRegW: 1
-FA: 0
-FB: 0
---------------------------------------------------
-
-DF stage: 
-RegWriteM: 1
-MemtoRegM: 0
-MemWriteM: 0
-ALUOutM: 8
-WriteDataM: 7
-WriteRegM: 1
---------------------------------------------------
-
-DS stage: 
-RegWriteM2: 1
-MemtoRegM2: 0
-MemWriteM2: 0
-ALUOutM2: 7
-WriteDataM2: 6
-WriteRegM2: 1
-ReadDataM2: 0
---------------------------------------------------
-
-TC stage: 
-RegWriteM3: 1
-MemtoRegM3: 0
-ALUOutM3: 7
-WriteRegM3: 1
-ReadDataM3: 0
---------------------------------------------------
-
-							 Cycle d
-IF stage: 
-PCSrcD: 0
-PC: 30
-PCBRANCHD !!!!!!!!  0
-StallF: 0
---------------------------------------------------
-
-WB stage: 
-MemtoRegW: 0
-ALUOutW: 6
-ReadDataW: 0
-RegWriteW: 1
-WriteRegW: 1
-ResultW: 6
-====================================================================
-
-PCBRANCH BEFORE 0
-RF stage: 
-ForwardAD 0
-ForwardBD 0
-FlushE: 0
-InstructionD: 0
-c1: 0
-c2: 0
-A1: 0
-A2: 0
-RD1: 0
-RD2: 0
-RegWriteD: 0
-MemtoRegD: 0
-MemWriteD: 0
-ALUControlD: 0
-ALUSrc: 0
-RegDstD: 0
-JumpD: 0
-BranchD: 0
-RsD: 0
-RtD: 0
-RdE: 0
-I-imm: 0
-J-imm: 0
---------------------------------------------------
-
-EX stage: 
-RegDstE: 0
-ALUSrcE: 0
-ALUControlE: 0
-SrcAE: 0
-SrcBE: 0
-ALUResult: 0
-RegWriteE: 0
-MemtoRegE: 0
-MemWriteE: 0
-WriteDataE: 0
-WriteRegE: 0
-buf3.RsE: 0
-Buf4.WriteregM: 0
-Buf5.WriteRegM2: 1
-Buf6.WriteRegM3: 1
-Buf7.WriteRegW: 1
-FA: 0
-FB: 0
---------------------------------------------------
-
-DF stage: 
-RegWriteM: 0
-MemtoRegM: 0
-MemWriteM: 0
-ALUOutM: 0
-WriteDataM: 0
-WriteRegM: 0
---------------------------------------------------
-
-DS stage: 
-RegWriteM2: 1
-MemtoRegM2: 0
-MemWriteM2: 0
-ALUOutM2: 8
-WriteDataM2: 7
-WriteRegM2: 1
-ReadDataM2: 0
---------------------------------------------------
-
-TC stage: 
-RegWriteM3: 1
-MemtoRegM3: 0
-ALUOutM3: 8
-WriteRegM3: 1
-ReadDataM3: 0
---------------------------------------------------
-
-							 Cycle e
-IF stage: 
-PCSrcD: 0
-PC: 34
-PCBRANCHD !!!!!!!!  0
-StallF: 0
---------------------------------------------------
-
-WB stage: 
-MemtoRegW: 0
-ALUOutW: 7
-ReadDataW: 0
-RegWriteW: 1
-WriteRegW: 1
-ResultW: 7
-====================================================================
-
-PCBRANCH BEFORE 0
-RF stage: 
-ForwardAD 0
-ForwardBD 0
-FlushE: 0
-InstructionD: 0
-c1: 0
-c2: 0
-A1: 0
-A2: 0
-RD1: 0
-RD2: 0
-RegWriteD: 0
-MemtoRegD: 0
-MemWriteD: 0
-ALUControlD: 0
-ALUSrc: 0
-RegDstD: 0
-JumpD: 0
-BranchD: 0
-RsD: 0
-RtD: 0
-RdE: 0
-I-imm: 0
-J-imm: 0
---------------------------------------------------
 
 EX stage: 
 RegDstE: 0
@@ -1253,8 +355,8 @@ WriteRegE: 0
 buf3.RsE: 0
 Buf4.WriteregM: 0
 Buf5.WriteRegM2: 0
-Buf6.WriteRegM3: 1
-Buf7.WriteRegW: 1
+Buf6.WriteRegM3: 0
+Buf7.WriteRegW: 0
 FA: 0
 FB: 0
 --------------------------------------------------
@@ -1279,56 +381,29 @@ ReadDataM2: 0
 --------------------------------------------------
 
 TC stage: 
-RegWriteM3: 1
+RegWriteM3: 0
 MemtoRegM3: 0
 ALUOutM3: 0
-WriteRegM3: 1
+WriteRegM3: 0
 ReadDataM3: 0
 --------------------------------------------------
 
-							 Cycle f
+							 Cycle 7
 IF stage: 
 PCSrcD: 0
-PC: 38
+PC: 4294967292
 PCBRANCHD !!!!!!!!  0
 StallF: 0
 --------------------------------------------------
 
 WB stage: 
 MemtoRegW: 0
-ALUOutW: 8
+ALUOutW: 0
 ReadDataW: 0
-RegWriteW: 1
-WriteRegW: 1
-ResultW: 8
+RegWriteW: 0
+WriteRegW: 0
+ResultW: 3
 ====================================================================
-
-PCBRANCH BEFORE 0
-RF stage: 
-ForwardAD 0
-ForwardBD 0
-FlushE: 0
-InstructionD: 0
-c1: 0
-c2: 0
-A1: 0
-A2: 0
-RD1: 0
-RD2: 0
-RegWriteD: 0
-MemtoRegD: 0
-MemWriteD: 0
-ALUControlD: 0
-ALUSrc: 0
-RegDstD: 0
-JumpD: 0
-BranchD: 0
-RsD: 0
-RtD: 0
-RdE: 0
-I-imm: 0
-J-imm: 0
---------------------------------------------------
 
 EX stage: 
 RegDstE: 0
@@ -1346,7 +421,137 @@ buf3.RsE: 0
 Buf4.WriteregM: 0
 Buf5.WriteRegM2: 0
 Buf6.WriteRegM3: 0
-Buf7.WriteRegW: 1
+Buf7.WriteRegW: 0
+FA: 0
+FB: 0
+--------------------------------------------------
+
+DF stage: 
+RegWriteM: 0
+MemtoRegM: 0
+MemWriteM: 0
+ALUOutM: 0
+WriteDataM: 0
+WriteRegM: 0
+--------------------------------------------------
+
+DS stage: 
+RegWriteM2: 0
+MemtoRegM2: 0
+MemWriteM2: 0
+ALUOutM2: 0
+WriteDataM2: 0
+WriteRegM2: 0
+ReadDataM2: 0
+--------------------------------------------------
+
+TC stage: 
+RegWriteM3: 0
+MemtoRegM3: 0
+ALUOutM3: 0
+WriteRegM3: 0
+ReadDataM3: 0
+--------------------------------------------------
+
+							 Cycle 8
+IF stage: 
+PCSrcD: 0
+PC: 4294967292
+PCBRANCHD !!!!!!!!  0
+StallF: 0
+--------------------------------------------------
+
+WB stage: 
+MemtoRegW: 0
+ALUOutW: 0
+ReadDataW: 0
+RegWriteW: 0
+WriteRegW: 0
+ResultW: 4
+====================================================================
+
+EX stage: 
+RegDstE: 0
+ALUSrcE: 0
+ALUControlE: 0
+SrcAE: 0
+SrcBE: 0
+ALUResult: 0
+RegWriteE: 0
+MemtoRegE: 0
+MemWriteE: 0
+WriteDataE: 0
+WriteRegE: 0
+buf3.RsE: 0
+Buf4.WriteregM: 0
+Buf5.WriteRegM2: 0
+Buf6.WriteRegM3: 0
+Buf7.WriteRegW: 0
+FA: 0
+FB: 0
+--------------------------------------------------
+
+DF stage: 
+RegWriteM: 0
+MemtoRegM: 0
+MemWriteM: 0
+ALUOutM: 0
+WriteDataM: 0
+WriteRegM: 0
+--------------------------------------------------
+
+DS stage: 
+RegWriteM2: 0
+MemtoRegM2: 0
+MemWriteM2: 0
+ALUOutM2: 0
+WriteDataM2: 0
+WriteRegM2: 0
+ReadDataM2: 0
+--------------------------------------------------
+
+TC stage: 
+RegWriteM3: 0
+MemtoRegM3: 0
+ALUOutM3: 0
+WriteRegM3: 0
+ReadDataM3: 0
+--------------------------------------------------
+
+							 Cycle 9
+IF stage: 
+PCSrcD: 0
+PC: 4294967292
+PCBRANCHD !!!!!!!!  0
+StallF: 0
+--------------------------------------------------
+
+WB stage: 
+MemtoRegW: 0
+ALUOutW: 0
+ReadDataW: 0
+RegWriteW: 0
+WriteRegW: 0
+ResultW: 5
+====================================================================
+
+EX stage: 
+RegDstE: 0
+ALUSrcE: 0
+ALUControlE: 0
+SrcAE: 0
+SrcBE: 0
+ALUResult: 0
+RegWriteE: 0
+MemtoRegE: 0
+MemWriteE: 0
+WriteDataE: 0
+WriteRegE: 0
+buf3.RsE: 0
+Buf4.WriteregM: 0
+Buf5.WriteRegM2: 0
+Buf6.WriteRegM3: 0
+Buf7.WriteRegW: 0
 FA: 0
 FB: 0
 --------------------------------------------------
@@ -1381,7 +586,7 @@ ReadDataM3: 0
 							 Cycle 10
 IF stage: 
 PCSrcD: 0
-PC: 3c
+PC: 4294967292
 PCBRANCHD !!!!!!!!  0
 StallF: 0
 --------------------------------------------------
@@ -1392,35 +597,8 @@ ALUOutW: 0
 ReadDataW: 0
 RegWriteW: 0
 WriteRegW: 0
-ResultW: 0
+ResultW: 6
 ====================================================================
-
-PCBRANCH BEFORE 0
-RF stage: 
-ForwardAD 0
-ForwardBD 0
-FlushE: 0
-InstructionD: 0
-c1: 0
-c2: 0
-A1: 0
-A2: 0
-RD1: 0
-RD2: 0
-RegWriteD: 0
-MemtoRegD: 0
-MemWriteD: 0
-ALUControlD: 0
-ALUSrc: 0
-RegDstD: 0
-JumpD: 0
-BranchD: 0
-RsD: 0
-RtD: 0
-RdE: 0
-I-imm: 0
-J-imm: 0
---------------------------------------------------
 
 EX stage: 
 RegDstE: 0
@@ -1473,7 +651,7 @@ ReadDataM3: 0
 							 Cycle 11
 IF stage: 
 PCSrcD: 0
-PC: 40
+PC: 4294967292
 PCBRANCHD !!!!!!!!  0
 StallF: 0
 --------------------------------------------------
@@ -1484,35 +662,8 @@ ALUOutW: 0
 ReadDataW: 0
 RegWriteW: 0
 WriteRegW: 0
-ResultW: 0
+ResultW: 7
 ====================================================================
-
-PCBRANCH BEFORE 0
-RF stage: 
-ForwardAD 0
-ForwardBD 0
-FlushE: 0
-InstructionD: 0
-c1: 0
-c2: 0
-A1: 0
-A2: 0
-RD1: 0
-RD2: 0
-RegWriteD: 0
-MemtoRegD: 0
-MemWriteD: 0
-ALUControlD: 0
-ALUSrc: 0
-RegDstD: 0
-JumpD: 0
-BranchD: 0
-RsD: 0
-RtD: 0
-RdE: 0
-I-imm: 0
-J-imm: 0
---------------------------------------------------
 
 EX stage: 
 RegDstE: 0
@@ -1565,7 +716,7 @@ ReadDataM3: 0
 							 Cycle 12
 IF stage: 
 PCSrcD: 0
-PC: 44
+PC: 4294967292
 PCBRANCHD !!!!!!!!  0
 StallF: 0
 --------------------------------------------------
@@ -1576,35 +727,8 @@ ALUOutW: 0
 ReadDataW: 0
 RegWriteW: 0
 WriteRegW: 0
-ResultW: 0
+ResultW: 1
 ====================================================================
-
-PCBRANCH BEFORE 0
-RF stage: 
-ForwardAD 0
-ForwardBD 0
-FlushE: 0
-InstructionD: 0
-c1: 0
-c2: 0
-A1: 0
-A2: 0
-RD1: 0
-RD2: 0
-RegWriteD: 0
-MemtoRegD: 0
-MemWriteD: 0
-ALUControlD: 0
-ALUSrc: 0
-RegDstD: 0
-JumpD: 0
-BranchD: 0
-RsD: 0
-RtD: 0
-RdE: 0
-I-imm: 0
-J-imm: 0
---------------------------------------------------
 
 EX stage: 
 RegDstE: 0
@@ -1657,7 +781,7 @@ ReadDataM3: 0
 							 Cycle 13
 IF stage: 
 PCSrcD: 0
-PC: 48
+PC: 4294967292
 PCBRANCHD !!!!!!!!  0
 StallF: 0
 --------------------------------------------------
@@ -1668,35 +792,398 @@ ALUOutW: 0
 ReadDataW: 0
 RegWriteW: 0
 WriteRegW: 0
-ResultW: 0
+ResultW: 1
 ====================================================================
 
-PCBRANCH BEFORE 0
-RF stage: 
-ForwardAD 0
-ForwardBD 0
-FlushE: 0
-InstructionD: 0
-c1: 0
-c2: 0
-A1: 0
-A2: 0
-RD1: 0
-RD2: 0
-RegWriteD: 0
-MemtoRegD: 0
-MemWriteD: 0
-ALUControlD: 0
-ALUSrc: 0
-RegDstD: 0
-JumpD: 0
-BranchD: 0
-RsD: 0
-RtD: 0
-RdE: 0
-I-imm: 0
-J-imm: 0
+EX stage: 
+RegDstE: 0
+ALUSrcE: 0
+ALUControlE: 0
+SrcAE: 0
+SrcBE: 0
+ALUResult: 0
+RegWriteE: 0
+MemtoRegE: 0
+MemWriteE: 0
+WriteDataE: 0
+WriteRegE: 0
+buf3.RsE: 0
+Buf4.WriteregM: 0
+Buf5.WriteRegM2: 0
+Buf6.WriteRegM3: 0
+Buf7.WriteRegW: 0
+FA: 0
+FB: 0
 --------------------------------------------------
+
+DF stage: 
+RegWriteM: 0
+MemtoRegM: 0
+MemWriteM: 0
+ALUOutM: 0
+WriteDataM: 0
+WriteRegM: 0
+--------------------------------------------------
+
+DS stage: 
+RegWriteM2: 0
+MemtoRegM2: 0
+MemWriteM2: 0
+ALUOutM2: 0
+WriteDataM2: 0
+WriteRegM2: 0
+ReadDataM2: 0
+--------------------------------------------------
+
+TC stage: 
+RegWriteM3: 0
+MemtoRegM3: 0
+ALUOutM3: 0
+WriteRegM3: 0
+ReadDataM3: 0
+--------------------------------------------------
+
+							 Cycle 14
+IF stage: 
+PCSrcD: 0
+PC: 4294967292
+PCBRANCHD !!!!!!!!  0
+StallF: 0
+--------------------------------------------------
+
+WB stage: 
+MemtoRegW: 0
+ALUOutW: 0
+ReadDataW: 0
+RegWriteW: 0
+WriteRegW: 0
+ResultW: 1
+====================================================================
+
+EX stage: 
+RegDstE: 0
+ALUSrcE: 0
+ALUControlE: 0
+SrcAE: 0
+SrcBE: 0
+ALUResult: 0
+RegWriteE: 0
+MemtoRegE: 0
+MemWriteE: 0
+WriteDataE: 0
+WriteRegE: 0
+buf3.RsE: 0
+Buf4.WriteregM: 0
+Buf5.WriteRegM2: 0
+Buf6.WriteRegM3: 0
+Buf7.WriteRegW: 0
+FA: 0
+FB: 0
+--------------------------------------------------
+
+DF stage: 
+RegWriteM: 0
+MemtoRegM: 0
+MemWriteM: 0
+ALUOutM: 0
+WriteDataM: 0
+WriteRegM: 0
+--------------------------------------------------
+
+DS stage: 
+RegWriteM2: 0
+MemtoRegM2: 0
+MemWriteM2: 0
+ALUOutM2: 0
+WriteDataM2: 0
+WriteRegM2: 0
+ReadDataM2: 0
+--------------------------------------------------
+
+TC stage: 
+RegWriteM3: 0
+MemtoRegM3: 0
+ALUOutM3: 0
+WriteRegM3: 0
+ReadDataM3: 0
+--------------------------------------------------
+
+							 Cycle 15
+IF stage: 
+PCSrcD: 0
+PC: 4294967292
+PCBRANCHD !!!!!!!!  0
+StallF: 0
+--------------------------------------------------
+
+WB stage: 
+MemtoRegW: 0
+ALUOutW: 0
+ReadDataW: 0
+RegWriteW: 0
+WriteRegW: 0
+ResultW: 1
+====================================================================
+
+EX stage: 
+RegDstE: 0
+ALUSrcE: 0
+ALUControlE: 0
+SrcAE: 0
+SrcBE: 0
+ALUResult: 0
+RegWriteE: 0
+MemtoRegE: 0
+MemWriteE: 0
+WriteDataE: 0
+WriteRegE: 0
+buf3.RsE: 0
+Buf4.WriteregM: 0
+Buf5.WriteRegM2: 0
+Buf6.WriteRegM3: 0
+Buf7.WriteRegW: 0
+FA: 0
+FB: 0
+--------------------------------------------------
+
+DF stage: 
+RegWriteM: 0
+MemtoRegM: 0
+MemWriteM: 0
+ALUOutM: 0
+WriteDataM: 0
+WriteRegM: 0
+--------------------------------------------------
+
+DS stage: 
+RegWriteM2: 0
+MemtoRegM2: 0
+MemWriteM2: 0
+ALUOutM2: 0
+WriteDataM2: 0
+WriteRegM2: 0
+ReadDataM2: 0
+--------------------------------------------------
+
+TC stage: 
+RegWriteM3: 0
+MemtoRegM3: 0
+ALUOutM3: 0
+WriteRegM3: 0
+ReadDataM3: 0
+--------------------------------------------------
+
+							 Cycle 16
+IF stage: 
+PCSrcD: 0
+PC: 4294967292
+PCBRANCHD !!!!!!!!  0
+StallF: 0
+--------------------------------------------------
+
+WB stage: 
+MemtoRegW: 0
+ALUOutW: 0
+ReadDataW: 0
+RegWriteW: 0
+WriteRegW: 0
+ResultW: 1
+====================================================================
+
+EX stage: 
+RegDstE: 0
+ALUSrcE: 0
+ALUControlE: 0
+SrcAE: 0
+SrcBE: 0
+ALUResult: 0
+RegWriteE: 0
+MemtoRegE: 0
+MemWriteE: 0
+WriteDataE: 0
+WriteRegE: 0
+buf3.RsE: 0
+Buf4.WriteregM: 0
+Buf5.WriteRegM2: 0
+Buf6.WriteRegM3: 0
+Buf7.WriteRegW: 0
+FA: 0
+FB: 0
+--------------------------------------------------
+
+DF stage: 
+RegWriteM: 0
+MemtoRegM: 0
+MemWriteM: 0
+ALUOutM: 0
+WriteDataM: 0
+WriteRegM: 0
+--------------------------------------------------
+
+DS stage: 
+RegWriteM2: 0
+MemtoRegM2: 0
+MemWriteM2: 0
+ALUOutM2: 0
+WriteDataM2: 0
+WriteRegM2: 0
+ReadDataM2: 0
+--------------------------------------------------
+
+TC stage: 
+RegWriteM3: 0
+MemtoRegM3: 0
+ALUOutM3: 0
+WriteRegM3: 0
+ReadDataM3: 0
+--------------------------------------------------
+
+							 Cycle 17
+IF stage: 
+PCSrcD: 0
+PC: 4294967292
+PCBRANCHD !!!!!!!!  0
+StallF: 0
+--------------------------------------------------
+
+WB stage: 
+MemtoRegW: 0
+ALUOutW: 0
+ReadDataW: 0
+RegWriteW: 0
+WriteRegW: 0
+ResultW: 1
+====================================================================
+
+EX stage: 
+RegDstE: 0
+ALUSrcE: 0
+ALUControlE: 0
+SrcAE: 0
+SrcBE: 0
+ALUResult: 0
+RegWriteE: 0
+MemtoRegE: 0
+MemWriteE: 0
+WriteDataE: 0
+WriteRegE: 0
+buf3.RsE: 0
+Buf4.WriteregM: 0
+Buf5.WriteRegM2: 0
+Buf6.WriteRegM3: 0
+Buf7.WriteRegW: 0
+FA: 0
+FB: 0
+--------------------------------------------------
+
+DF stage: 
+RegWriteM: 0
+MemtoRegM: 0
+MemWriteM: 0
+ALUOutM: 0
+WriteDataM: 0
+WriteRegM: 0
+--------------------------------------------------
+
+DS stage: 
+RegWriteM2: 0
+MemtoRegM2: 0
+MemWriteM2: 0
+ALUOutM2: 0
+WriteDataM2: 0
+WriteRegM2: 0
+ReadDataM2: 0
+--------------------------------------------------
+
+TC stage: 
+RegWriteM3: 0
+MemtoRegM3: 0
+ALUOutM3: 0
+WriteRegM3: 0
+ReadDataM3: 0
+--------------------------------------------------
+
+							 Cycle 18
+IF stage: 
+PCSrcD: 0
+PC: 4294967292
+PCBRANCHD !!!!!!!!  0
+StallF: 0
+--------------------------------------------------
+
+WB stage: 
+MemtoRegW: 0
+ALUOutW: 0
+ReadDataW: 0
+RegWriteW: 0
+WriteRegW: 0
+ResultW: 1
+====================================================================
+
+EX stage: 
+RegDstE: 0
+ALUSrcE: 0
+ALUControlE: 0
+SrcAE: 0
+SrcBE: 0
+ALUResult: 0
+RegWriteE: 0
+MemtoRegE: 0
+MemWriteE: 0
+WriteDataE: 0
+WriteRegE: 0
+buf3.RsE: 0
+Buf4.WriteregM: 0
+Buf5.WriteRegM2: 0
+Buf6.WriteRegM3: 0
+Buf7.WriteRegW: 0
+FA: 0
+FB: 0
+--------------------------------------------------
+
+DF stage: 
+RegWriteM: 0
+MemtoRegM: 0
+MemWriteM: 0
+ALUOutM: 0
+WriteDataM: 0
+WriteRegM: 0
+--------------------------------------------------
+
+DS stage: 
+RegWriteM2: 0
+MemtoRegM2: 0
+MemWriteM2: 0
+ALUOutM2: 0
+WriteDataM2: 0
+WriteRegM2: 0
+ReadDataM2: 0
+--------------------------------------------------
+
+TC stage: 
+RegWriteM3: 0
+MemtoRegM3: 0
+ALUOutM3: 0
+WriteRegM3: 0
+ReadDataM3: 0
+--------------------------------------------------
+
+							 Cycle 19
+IF stage: 
+PCSrcD: 0
+PC: 4294967292
+PCBRANCHD !!!!!!!!  0
+StallF: 0
+--------------------------------------------------
+
+WB stage: 
+MemtoRegW: 0
+ALUOutW: 0
+ReadDataW: 0
+RegWriteW: 0
+WriteRegW: 0
+ResultW: 1
+====================================================================
 
 EX stage: 
 RegDstE: 0

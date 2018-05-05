@@ -14,12 +14,26 @@ public:
 	unsigned int ALUOutW, WriteRegW;
 	void inputData(unsigned int RegWriteM3, unsigned int ReadDataM3, unsigned int MemtoRegM3
 		, unsigned int ALUOutM3, unsigned int WriteRegM3);
+	void clr()
+	{
+		RegWriteW = 0;
+		ReadDataW = 0;
+		ALUOutW = 0;
+		WriteRegW = 0;
+		ReadDataW = 0;
+		RegWriteM3 = 0;
+		ReadDataM3 = 0;
+		ALUOutM3 = 0;
+		WriteRegM3 = 0;
+		ReadDataM3 = 0;
+		inst_num = 0;
+	}
 	void updateData();
-	int inst_num = 0;
+	int inst_num = -1, inst_num_in = -1;
 	unsigned int pc;
 	void setInstNum(int num, unsigned int p)
 	{
-		inst_num = num;
+		inst_num_in = num;
 		pc = p;
 	}
 private:
@@ -54,5 +68,6 @@ void buffer_7::updateData()
 	ALUOutW = ALUOutM3;
 	WriteRegW = WriteRegM3;
 	ReadDataW = ReadDataM3;
+	inst_num = inst_num_in;
 }
 #endif

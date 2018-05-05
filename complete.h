@@ -1,3 +1,5 @@
+#ifndef COMPLETE_H
+#define COMPLETE_H
 #include <map>
 using namespace std;
 
@@ -17,14 +19,33 @@ public:
 	void insert(int n, unsigned int ReadDataC, unsigned int RegWriteC, unsigned int MemtoRegC, unsigned int ALUOutC, unsigned int WriteRegC);
 	map <int, inst> m;
 	int n;
+	bool isComp(int dst)
+	{
+		for (int i = n; i >= 0; i--)
+		{
+			if(m.count(i))
+			if (m[i].WriteReg == dst&&m[i].RegWrite)
+				return true;
+		}
+		return false;
+	}
+	int find(int dst)
+	{
+		for (int i = n; i >= 0; i--)
+		{
+			if (m.count(i))
+			if (m[i].WriteReg == dst&&m[i].RegWrite)
+				return m[i].MemtoReg ? m[i].ReadData : m[i].ALUOut;
+		}
+		return 0;
+	}
 
 
 
 };
-
 complete::complete()
 {
-	n = 1;
+	n = 0;
 	m.clear();
 }
 void complete::insert(int instNum, unsigned int ReadDataC, unsigned int RegWriteC, unsigned int MemtoRegC, unsigned int ALUOutC, unsigned int WriteRegC)
@@ -35,8 +56,15 @@ void complete::insert(int instNum, unsigned int ReadDataC, unsigned int RegWrite
 	i.MemtoReg = MemtoRegC;
 	i.ALUOut = ALUOutC;
 	i.WriteReg = WriteRegC;
-
-	m[instNum] = i;
+	if (m.count(instNum))
+	{
+		m[instNum] = i;
+	}
+	else
+	{
+		m.insert(pair<int, inst>(instNum, i));
+	}
+	
 }
 bool complete::getnext()
 {
@@ -53,3 +81,4 @@ void complete::next(unsigned int &ReadDataWB, unsigned int &RegWriteWB, unsigned
 	m.erase(n);
 	n++;
 }
+#endif

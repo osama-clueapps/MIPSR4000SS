@@ -12,11 +12,11 @@ public:
 	void inputData(unsigned int RegWriteM, unsigned int MemtoRegM, unsigned int MemWriteM
 		, unsigned int ALUOutM, unsigned int WriteDataM, unsigned int WriteRegM);
 	void updateData();
-	int inst_num = 0;
+	int inst_num = -1, inst_num_in = -1;
 	unsigned int pc;
 	void setInstNum(int num, unsigned int p)
 	{
-		inst_num = num;
+		inst_num_in = num;
 		pc = p;
 	}
 private:
@@ -54,5 +54,6 @@ void buffer_5::updateData()
 	ALUOutM2 = ALUOutM;
 	WriteDataM2 = WriteDataM;
 	WriteRegM2 = WriteRegM;
+	inst_num = inst_num_in;
 }
 #endif
