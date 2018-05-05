@@ -1,4 +1,5 @@
 #pragma once
+#pragma once
 #ifndef CACHE_H
 #define CACHE_H
 #include <iostream>
@@ -17,7 +18,7 @@ private:
 		unsigned int tag = 0;
 		unsigned int data;
 	};
-	int size = 32*4*8;
+	int size = 32 * 4 * 8;
 	unsigned int tagBits, indexBits;
 	unsigned int offsetBits = 2;//because the line size is equal to 4 bytes so 2 = log2(4);
 	cacheCell cacheArr[1000];
@@ -43,7 +44,7 @@ void cache::read(unsigned int address, unsigned int& tag, unsigned int& data, in
 	temp = pow(2, indexBits) - 1;
 	index = address & temp;
 	address = address >> indexBits;
-	tagaddress = address;	
+	tagaddress = address;
 	tag = cacheArr[index].tag;
 	data = cacheArr[index].data;
 	valid = cacheArr[index].valid;

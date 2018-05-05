@@ -96,7 +96,7 @@ void buffer_3::flushE()
 	RtD = 0;
 	RdD = 0;
 	SignImmD = 0;
-	inst_num = 0;
+	inst_num = -1;
 	flushed = true;
 }
 #endif

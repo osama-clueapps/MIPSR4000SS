@@ -18,10 +18,10 @@ public:
 		unsigned int RegWriteE_in, unsigned int MemWriteE_in, unsigned int MemtoRegM_in, unsigned int WriteRegM_in,
 		unsigned int PCSrcD_in, unsigned int WriteRegM2_in, unsigned int WriteRegM3_in, unsigned int RegWriteM_in,
 		unsigned int RegWriteM2_in, unsigned int RegWriteM3_in, int RegDstE_in, int RdE_in, int WriteRegW_in,
-		int RegWriteW_in,unsigned int WriteRegE_in);
-	void updatePCSrc(unsigned int PCSrc)
+		int RegWriteW_in, unsigned int WriteRegE_in);
+	void updatePCSrc( int PCSrc)
 	{
-		if (PCSrcD != 0)
+		if (PCSrc == 1)
 			FlushE = 1;
 		else
 			FlushE = 0;
@@ -58,7 +58,7 @@ HazardUnit::~HazardUnit()
 {
 
 }
-void HazardUnit::inputData(unsigned int RsD_in, unsigned int RsE_in, unsigned int RtD_in, unsigned int RtE_in,unsigned int MemtoRegE_in, unsigned int branch_in,
+void HazardUnit::inputData(unsigned int RsD_in, unsigned int RsE_in, unsigned int RtD_in, unsigned int RtE_in, unsigned int MemtoRegE_in, unsigned int branch_in,
 	unsigned int RegWriteE_in, unsigned int MemWriteE_in, unsigned int MemtoRegM_in, unsigned int WriteRegM_in,
 	unsigned int PCSrcD_in, unsigned int WriteRegM2_in, unsigned int WriteRegM3_in, unsigned int RegWriteM_in,
 	unsigned int RegWriteM2_in, unsigned int RegWriteM3_in, int RegDstE_in, int RdE_in, int WriteRegW_in,
@@ -90,16 +90,16 @@ void HazardUnit::updateData()
 {
 	lwstall = ((RsD == RtE) || (RtD == RtE)) && MemtoRegE;
 	branchstall =
-		((branch) && (RegWriteE) && ((WriteRegE == RsD) ||(WriteRegE == RtD)))//if the data is still not out of the alu
+		((branch) && (RegWriteE) && ((WriteRegE == RsD) || (WriteRegE == RtD)))//if the data is still not out of the alu
 		||
-		((branch) && (MemtoRegM) && ((WriteRegM == RsD) ||(WriteRegM == RtD)));//if the data is still not out of the memory
-	
+		((branch) && (MemtoRegM) && ((WriteRegM == RsD) || (WriteRegM == RtD)));//if the data is still not out of the memory
+
 	StallF = lwstall || branchstall;
 	StallD = lwstall || branchstall;
 	if ((RsE != 0 && (RsE == WriteRegM)) && RegWriteM)
 		ForwardAE = 2;
 	else if ((RsE != 0 && (RsE == WriteRegW)) && RegWriteW)
-	    ForwardAE = 1;
+		ForwardAE = 1;
 	else if ((RsE != 0 && (RsE == WriteRegM2)) && RegWriteM2)
 		ForwardAE = 3;
 	else if ((RsE != 0 && (RsE == WriteRegM3) && RegWriteM3))

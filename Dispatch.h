@@ -11,7 +11,7 @@ public:
 	};
 	Dispatch();
 	~Dispatch();
-	void inputData(unsigned int inst1, int instNum1,unsigned int inst2,int instNum2)
+	void inputData(unsigned int inst1, int instNum1, unsigned int inst2, int instNum2)
 	{
 		if (inst1 != 0)
 		{
@@ -44,7 +44,7 @@ public:
 		if (num == 1)
 		{
 			inst1_val = insts.front().instruction;
-			inst1 = inst1_val;	
+			inst1 = inst1_val;
 			instNum1 = insts.front().instNum;
 			insts.pop();
 			return;
@@ -60,7 +60,7 @@ public:
 			return;
 		}
 		inst2_val = insts.front().instruction;
-		instCU cu1,cu2;
+		instCU cu1, cu2;
 		cu1.setinst(inst1_val);
 		cu2.setinst(inst2_val);
 		if (!dependent(cu1, cu2))
@@ -76,7 +76,7 @@ public:
 		}
 	}
 	unsigned int inst1, inst2;
-	int instNum1, instNum2;
+	int instNum1=-1, instNum2=-1;
 private:
 	queue<inst> insts;
 	bool dependent(instCU cu1, instCU cu2)
@@ -95,17 +95,33 @@ private:
 			if (cu2.RegDst&&cu2.RtD == write1)
 				return true;
 		}
+		if (cu1.MemWrite&&cu2.RegWrite)
+		{
+			int write2;
+			write2 = cu2.RegDst ? cu2.RdE : cu2.RtD;
+			if (cu1.RsD == write2)
+				return true;
+			if (cu1.RtD == write2)
+				return true;
+		}
+		if (cu2.MemWrite&&cu1.RegWrite)
+		{
+			int write1;
+			write1 = cu1.RegDst ? cu1.RdE : cu1.RtD;
+			if (cu2.RsD == write1)
+				return true;
+			if (cu2.RtD == write1)
+				return true;
+		}
 		if ((cu1.branch || cu1.jump || cu1.jumpr) && (cu2.branch || cu2.jump || cu2.jumpr))//interconnecting branches or jumps
 			return true;
 		return false;
 	}
 };
-
 Dispatch::Dispatch()
 {
 
 }
-
 Dispatch::~Dispatch()
 {
 }

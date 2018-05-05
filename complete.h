@@ -17,30 +17,39 @@ public:
 	void next(unsigned int &ReadDataWB, unsigned int &RegWriteWB, unsigned int &MemtoRegWB, unsigned int &ALUOutWB, unsigned int &WriteRegWB);
 	bool getnext();
 	void insert(int n, unsigned int ReadDataC, unsigned int RegWriteC, unsigned int MemtoRegC, unsigned int ALUOutC, unsigned int WriteRegC);
+	void setNext(int i)
+	{
+		n = i;
+	}
 	map <int, inst> m;
 	int n;
 	bool isComp(int dst)
 	{
-		for (int i = n; i >= 0; i--)
+		for (int i = 20; i >= 0; i--)
 		{
-			if(m.count(i))
-			if (m[i].WriteReg == dst&&m[i].RegWrite)
-				return true;
+			if (m.count(i))
+				if (m[i].WriteReg == dst && m[i].RegWrite)
+					return true;
 		}
 		return false;
 	}
 	int find(int dst)
 	{
-		for (int i = n; i >= 0; i--)
+		for (int i = 20; i >= 0; i--)
 		{
 			if (m.count(i))
-			if (m[i].WriteReg == dst&&m[i].RegWrite)
-				return m[i].MemtoReg ? m[i].ReadData : m[i].ALUOut;
+				if (m[i].WriteReg == dst && m[i].RegWrite)
+					return (m[i].MemtoReg) ? m[i].ReadData : m[i].ALUOut;
 		}
 		return 0;
 	}
-
-
+	void print() {
+		for (map<int, inst >::const_iterator it = m.begin();
+			it != m.end(); ++it)
+		{
+			std::cout <<dec<<  it->first << " ALUOUT: " << it->second.ALUOut <<"  Regwrite: "  << it->second.RegWrite << "\n";
+		}
+	}
 
 };
 complete::complete()
@@ -64,7 +73,7 @@ void complete::insert(int instNum, unsigned int ReadDataC, unsigned int RegWrite
 	{
 		m.insert(pair<int, inst>(instNum, i));
 	}
-	
+
 }
 bool complete::getnext()
 {

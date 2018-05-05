@@ -1,4 +1,5 @@
 #pragma once
+#pragma once
 #ifndef BTB_H
 #define BTB_H
 #include <vector>
@@ -59,7 +60,7 @@ public:
 		for (int i = 0; i < inst.size(); i++) {
 			if (inst[i] >> 26 == 0x4) {
 				predict[i].branchpc = i * 4;
-				predict[i].predictedState = 2;
+				predict[i].predictedState = 1;
 			}
 			else predict[i].branchpc = 3;
 		}
@@ -71,11 +72,11 @@ public:
 		return false;
 	}
 	void update(unsigned int pc, bool taken) {
-		int i=findPC(pc);
+		int i = findPC(pc);
 		if (i != -1)
-		predict[i].predictedState=branchPredict(predict[i].predictedState, taken);
+			predict[i].predictedState = branchPredict(predict[i].predictedState, taken);
 		//if (predict[i].predictedState == 0 || predict[i].predictedState == 1) {
-			////predict[i].predictedPC =
+		////predict[i].predictedPC =
 		//}
 		//else
 		//	predict[i].predictedPC = predict[i].branchpc + 4;
@@ -92,7 +93,7 @@ public:
 			}
 		}
 		else return false;
- }
+	}
 };
 
 #endif
